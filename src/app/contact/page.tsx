@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Contact",
   description:
     "Apply to join the Lumen Community or request a free Content Audit. No obligation, no hard sell.",
+  alternates: { canonical: "/contact" },
 };
 
 type ContactPageProps = {

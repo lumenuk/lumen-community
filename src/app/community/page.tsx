@@ -38,6 +38,7 @@ export const metadata: Metadata = {
   title: "The Lumen Community",
   description:
     "A growing network of London business owners: monthly check-in support, member introductions, partner deals and perks, and a shared space to grow.",
+  alternates: { canonical: "/community" },
 };
 
 export default function CommunityPage() {

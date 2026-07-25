@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   title: "Services",
   description:
     "Social media content, management, strategy, and growth across Instagram, Facebook, and LinkedIn, plus marketing and SEO guidance for London businesses.",
+  alternates: { canonical: "/services" },
 };
 
 const socialMediaServices = [

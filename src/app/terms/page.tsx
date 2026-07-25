@@ -6,6 +6,7 @@ import { siteConfig } from "@/lib/site-config";
 export const metadata: Metadata = {
   title: "Terms",
   description: "Terms of use for the Lumen Growth website.",
+  alternates: { canonical: "/terms" },
 };
 
 export default function TermsPage() {

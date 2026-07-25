@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: "A London Business Community",
   description:
     "Lumen Growth is a London business community where members get social media support, marketing guidance, and a network of people who can help when it matters.",
+  alternates: { canonical: "/" },
 };
 
 const communityHighlights = [

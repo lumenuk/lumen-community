@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   title: "FAQ",
   description:
     "Answers to common questions about Lumen Growth, the Lumen Community, membership, social media services, and the free Content Audit.",
+  alternates: { canonical: "/faq" },
 };
 
 

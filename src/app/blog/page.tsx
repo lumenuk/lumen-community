@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: "Blog",
   description:
     "Practical notes on visibility, trust, and growing a London business, written for business owners rather than marketers.",
+  alternates: { canonical: "/blog" },
 };
 
 export default function BlogIndexPage() {
