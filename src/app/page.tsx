@@ -53,7 +53,7 @@ export default function HomePage() {
               <span className="block text-warm-deep">London owners grow in.</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
-              A network of London owners that shows up when it matters, with social
+              A network of London owners that show up when it matters, with social
               media support and marketing guidance built in.
             </p>
             <div className="mt-9 flex flex-wrap justify-center gap-4">
