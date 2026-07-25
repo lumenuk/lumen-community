@@ -1,8 +1,8 @@
 # Lumen Growth — lumengrowth.co.uk
 
-Marketing site for Lumen Growth, a London B2B marketing agency. Next.js App Router,
-TypeScript, Tailwind, Motion, Zod. The single conversion goal is the Growth Audit
-request form — there is no checkout, login, or client portal by design.
+Site for Lumen Growth, a London business community with a social media services arm. Next.js App Router,
+TypeScript, Tailwind, Motion, Zod. The conversion goals are community membership applications and free Growth Audit
+requests (both on /contact) — there is no checkout, login, or client portal by design.
 
 ## Development
 
@@ -19,9 +19,10 @@ All optional — the site runs without them, with reduced functionality as noted
 
 | Variable | Purpose |
 | --- | --- |
-| `RESEND_API_KEY` | Enables emailing each Growth Audit lead via [Resend](https://resend.com). Without it, leads are only appended to `data/leads/growth-audit-leads.jsonl` (fine locally / on a persistent server; **lost on serverless hosts**). |
+| `RESEND_API_KEY` | Enables emailing each form submission (membership, Growth Audit, newsletter) via [Resend](https://resend.com). Without it, submissions are only appended to `data/submissions/*.jsonl` (fine locally / on a persistent server; **lost on serverless hosts**). |
 | `LEAD_NOTIFY_EMAIL` | Where lead emails go. Defaults to the site contact address (`src/lib/site-config.ts`). On Resend's free tier without a verified domain, this must be the email the Resend account was registered with. |
 | `LEAD_FROM_EMAIL` | Lead email sender. Defaults to `Lumen Growth <onboarding@resend.dev>`, which works before the domain is verified. After verifying `lumengrowth.co.uk` in Resend, set e.g. `Lumen Growth <leads@lumengrowth.co.uk>`. |
+| `NEWSLETTER_EMAIL` | Where newsletter signups are delivered. Falls back to `LEAD_NOTIFY_EMAIL`. Replace the newsletter action with a real provider (Mailchimp / Resend Audiences) when one is chosen. |
 | `NEXT_PUBLIC_GA_ID` | Google Analytics 4 measurement ID (`G-XXXXXXX`). GA only loads after a visitor accepts optional cookies in the consent banner; without the variable it never loads. |
 
 ## Lead-delivery setup (one-time)

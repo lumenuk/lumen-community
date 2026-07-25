@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function TermsPage() {
   return (
     <Section tone="light" containerClassName="max-w-3xl">
-      <PageIntro title="Terms of use" description="Last updated 8 July 2026." />
+      <PageIntro title="Terms of use" description="Last updated 9 July 2026." />
 
       <p className="mt-6 rounded-md border border-border bg-secondary px-4 py-3 text-sm leading-relaxed text-muted-foreground">
         These terms are a working business document maintained by Lumen Growth, not legal
@@ -23,18 +23,18 @@ export default function TermsPage() {
         <div>
           <h2 className="text-lg font-semibold text-foreground">About this website</h2>
           <p className="mt-2">
-            This website is operated by Lumen Growth. These terms cover your use of this
-            website only. They don&apos;t cover any services agreement, which is set out
-            separately once we agree to work together following a Growth Audit and
-            discovery call.
+            This website is operated by Lumen Growth, a London business community and
+            social media services provider. These terms cover your use of this website
+            only. They don&apos;t cover community membership terms or any services
+            agreement, which are set out separately once we agree to work together.
           </p>
         </div>
 
         <div>
           <h2 className="text-lg font-semibold text-foreground">Using this website</h2>
           <p className="mt-2">
-            You may browse this website and submit a Growth Audit request for genuine
-            business enquiries. You agree not to submit false information, attempt to
+            You may browse this website, apply to join the community, subscribe to the
+            newsletter, and submit a Content Audit request for genuine business enquiries. You agree not to submit false information, attempt to
             disrupt the site, or use any content on it for purposes other than evaluating
             our services.
           </p>

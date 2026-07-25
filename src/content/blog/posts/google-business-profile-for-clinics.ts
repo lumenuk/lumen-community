@@ -38,7 +38,7 @@ export const googleBusinessProfileForClinics: BlogPost = {
     },
     {
       type: "paragraph",
-      text: "If you want a clear view of where your own profile stands against nearby competitors, that's exactly what we look at in a Growth Audit.",
+      text: "If you want a clear view of where your own profile stands against nearby competitors, get in touch and we'll take a look — it's the kind of thing we're happy to talk through.",
     },
   ],
 };

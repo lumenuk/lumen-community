@@ -20,11 +20,19 @@ This skill defines what Lumen Growth sells, to whom, and how offers must be stru
 
 **Target market:**
 - B2B, service-based, London-based. Buyer is a business owner or senior decision-maker, not a consumer.
-- Primary target industries: dental clinics, private healthcare, property companies, construction and trades, gyms and fitness businesses, beauty and aesthetics clinics.
+- Audience: London business owners broadly. Do not name target industries on the site (owner rule, July 2026).
 - Primary target areas: London broadly, plus specifically Battersea, Greenwich, Hackney, Tower Hamlets, Fulham, Richmond.
 - Restaurants and other low-margin businesses are explicitly not a core target. They may be mentioned only as suited to a lighter, social-media-only support offering — never featured as a flagship example.
 
-**Services likely offered (confirmed categories to build the Services page around):**
+**REPOSITIONED OFFERING (July 2026) — community first:**
+- Core: Lumen Community membership. Concrete inclusions (owner-confirmed 2026-07-13): one-to-one check-ins monthly or quarterly plus ad-hoc calls when something urgent comes up; a members' group chat (WhatsApp); LinkedIn networking; in-person London meetups and events; partner perks. Applications via /contact.
+- MEMBERSHIP TERMS (owner-confirmed 2026-07-13): first week free; the site may say founder members join with "no tie-in". Internal ladder (context only, do not publish): free week → month with no tie-in → 6-month tie-in for later members. Membership fee figures stay unpublished; fee is discussed on the application call.
+- FOUNDER MEMBERS: the first clients are founder members and get lower monthly rates than after the community grows past roughly 10–20 members/clients. The site may say "founder members join at lower monthly rates" and "we take on a limited number of businesses at a time" — never publish the 10–20 figure or any rates.
+- Services arm leads with SOCIAL MEDIA: content creation, account management, strategy, growth, across Instagram, Facebook, LinkedIn. Open to non-members, but positioned as members-first / limited capacity.
+- General marketing and SEO are positioned as guidance and support (advice, basic on-page SEO, Google Business Profile support), NOT full-service delivery. SEO audits are outreach-only; the site offer is the free Content Audit.
+- No sector/industry targeting language anywhere.
+
+**Legacy service categories (context only, do not build agency pages around these):**
 - SEO
 - Local SEO
 - Google Business Profile optimisation

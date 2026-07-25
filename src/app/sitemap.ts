@@ -5,10 +5,10 @@ import { getAllPosts } from "@/lib/blog";
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
     "",
-    "/how-it-works",
+    "/community",
     "/services",
-    "/growth-audit",
     "/blog",
+    "/contact",
     "/faq",
     "/privacy-policy",
     "/terms",

@@ -1,77 +1,56 @@
 export const siteConfig = {
   name: "Lumen Growth",
-  tagline: "Marketing for London businesses that deserve to be found.",
+  communityName: "Lumen Community",
+  tagline: "A London business community with your growth in mind.",
   description:
-    "Lumen Growth is a London-based marketing agency helping established local businesses become more visible, more trusted, and easier to choose online.",
+    "Lumen Growth is a London business community where members get social media support, marketing guidance, and a network of people who can help when it matters.",
   url: "https://www.lumengrowth.co.uk",
   contactEmail: "lumen.solutions.management@gmail.com",
   locationLabel: "London, UK",
 };
 
 export const mainNav = [
-  { label: "Home", href: "/" },
-  { label: "How It Works", href: "/how-it-works" },
+  { label: "Community", href: "/community" },
   { label: "Services", href: "/services" },
-  { label: "Insights", href: "/blog" },
-  { label: "FAQ", href: "/faq" },
+  { label: "Blog", href: "/blog" },
+  { label: "Contact", href: "/contact" },
 ] as const;
 
 export const footerNav = {
-  company: [
-    { label: "How It Works", href: "/how-it-works" },
+  explore: [
+    { label: "Community", href: "/community" },
     { label: "Services", href: "/services" },
-    { label: "Insights", href: "/blog" },
+    { label: "Blog", href: "/blog" },
+    { label: "Contact", href: "/contact" },
     { label: "FAQ", href: "/faq" },
   ],
   legal: [
     { label: "Privacy Policy", href: "/privacy-policy" },
-    { label: "Terms", href: "/terms" },
+    { label: "Terms and Conditions", href: "/terms" },
   ],
 };
 
+/* Primary conversion: joining the community. Secondary: the free Content
+   Audit (owner decision, July 2026 — SEO audits are offered on outreach only,
+   never as the site offer). Both land on /contact; ?enquiry=audit preselects
+   the audit form. */
 export const primaryCta = {
-  label: "Request a Growth Audit",
-  href: "/growth-audit",
+  label: "Apply to Join the Community",
+  href: "/contact",
 };
 
-export const targetIndustries = [
-  {
-    name: "Dental clinics",
-    outcome: "more enquiry calls and completed bookings from local search",
-  },
-  {
-    name: "Private healthcare",
-    outcome: "clearer visibility and more trust from prospective patients",
-  },
-  {
-    name: "Property companies",
-    outcome: "stronger local search presence and more qualified enquiries",
-  },
-  {
-    name: "Construction and trades",
-    outcome: "more inbound project enquiries and a more credible online presence",
-  },
-  {
-    name: "Gyms and fitness businesses",
-    outcome: "more sign-ups from people searching and comparing nearby",
-  },
-  {
-    name: "Beauty and aesthetics clinics",
-    outcome: "more bookings and stronger trust signals for high-consideration treatments",
-  },
+export const auditCta = {
+  label: "Request a Free Content Audit",
+  href: "/contact?enquiry=audit",
+};
+
+/* Facebook and LinkedIn pending — add once those profiles exist. */
+export const socialLinks = [
+  { name: "Instagram", href: "https://www.instagram.com/lumengrowth.uk/" },
 ] as const;
 
-export const targetAreas = [
-  "London",
-  "Battersea",
-  "Greenwich",
-  "Hackney",
-  "Tower Hamlets",
-  "Fulham",
-  "Richmond",
-] as const;
-
-/* The delivery method — how the work itself runs once an engagement starts. */
+/* Retained for potential reuse (process slideshow component). Not currently
+   rendered anywhere since the agency-era How It Works page was removed. */
 export const methodSteps = [
   {
     step: 1,
@@ -83,7 +62,7 @@ export const methodSteps = [
     step: 2,
     title: "Audit",
     description:
-      "We assess your current visibility — website, Google Business Profile, reviews, social presence — and find where enquiries are being lost.",
+      "We assess your current visibility: website, Google Business Profile, reviews, and social presence, and find where enquiries are being lost.",
   },
   {
     step: 3,
@@ -95,7 +74,7 @@ export const methodSteps = [
     step: 4,
     title: "Build and optimise",
     description:
-      "We do the work — profiles, pages, content, campaigns — prioritising the fixes that affect enquiries soonest.",
+      "We do the work: profiles, pages, content, campaigns, prioritising the fixes that affect enquiries soonest.",
   },
   {
     step: 5,
@@ -114,9 +93,9 @@ export const methodSteps = [
 export const journeySteps = [
   {
     step: 1,
-    title: "You request a Growth Audit",
+    title: "You get in touch",
     description:
-      "Tell us about your business and where you're struggling to be seen or trusted online. No obligation, no hard sell.",
+      "Apply to join the community or request a free Content Audit. No obligation, no hard sell.",
   },
   {
     step: 2,
@@ -128,12 +107,12 @@ export const journeySteps = [
     step: 3,
     title: "We call you",
     description:
-      "A short discovery call to understand your business, your goals, and whether we're a good fit for each other.",
+      "A short call to understand your business, your goals, and whether we're a good fit for each other.",
   },
   {
     step: 4,
     title: "We agree a plan",
     description:
-      "If it makes sense to work together, we discuss the right services, pricing, and contract length for your business.",
+      "If it makes sense to work together, we discuss the right support for your business.",
   },
 ] as const;

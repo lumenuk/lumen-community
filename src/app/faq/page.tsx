@@ -12,7 +12,7 @@ import { faqItems } from "@/lib/faq";
 export const metadata: Metadata = {
   title: "FAQ",
   description:
-    "Answers to common questions about pricing, contracts, timelines, and how Lumen Growth works with London businesses.",
+    "Answers to common questions about Lumen Growth, the Lumen Community, membership, social media services, and the free Content Audit.",
 };
 
 
@@ -22,7 +22,7 @@ export default function FaqPage() {
       <Section tone="light">
         <PageIntro
           title="Frequently asked questions"
-          description="Straightforward answers to the questions we get asked most before someone requests a Growth Audit."
+          description="Straightforward answers about the community, our services, and how to get started."
         />
       </Section>
 
@@ -38,7 +38,7 @@ export default function FaqPage() {
         <Reveal>
           <h2 className="text-2xl font-semibold sm:text-3xl">Still have a question?</h2>
           <p className="mx-auto mt-3 max-w-xl text-base leading-relaxed text-muted-foreground">
-            Request a Growth Audit and mention it, or reach out directly.
+            Get in touch and ask, no obligation.
           </p>
           <div className="mt-8 flex justify-center">
             <Button size="lg" variant="warm" render={<Link href={primaryCta.href} />}>

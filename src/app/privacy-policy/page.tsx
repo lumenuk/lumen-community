@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function PrivacyPolicyPage() {
   return (
     <Section tone="light" containerClassName="max-w-3xl">
-      <PageIntro title="Privacy Policy" description="Last updated 8 July 2026." />
+      <PageIntro title="Privacy Policy" description="Last updated 9 July 2026." />
 
       <p className="mt-6 rounded-md border border-border bg-secondary px-4 py-3 text-sm leading-relaxed text-muted-foreground">
         This policy is a working business document maintained by Lumen Growth, not legal
@@ -23,8 +23,8 @@ export default function PrivacyPolicyPage() {
         <div>
           <h2 className="text-lg font-semibold text-foreground">Who we are</h2>
           <p className="mt-2">
-            Lumen Growth (&ldquo;we&rdquo;, &ldquo;us&rdquo;) is a London-based marketing
-            agency. You can contact us at{" "}
+            Lumen Growth (&ldquo;we&rdquo;, &ldquo;us&rdquo;) is a London business community
+            and social media services provider. You can contact us at{" "}
             <a href={`mailto:${siteConfig.contactEmail}`} className="underline">
               {siteConfig.contactEmail}
             </a>{" "}
@@ -34,14 +34,17 @@ export default function PrivacyPolicyPage() {
 
         <div>
           <h2 className="text-lg font-semibold text-foreground">
-            What we collect through the Growth Audit form
+            What we collect through our forms
           </h2>
           <p className="mt-2">
-            When you request a Growth Audit, we ask for your name, email address, phone
-            number, business name, business address or area, website URL, the services
-            you&apos;re interested in, an approximate revenue band (optional), and a
-            description of your main marketing challenge. We only collect what we need to
-            assess your enquiry and prepare for a call with you.
+            When you apply to join the community, we ask for your full name, business
+            name, website (optional), email address, phone number (optional), a short
+            description of your business, and what you&apos;re hoping to get from the
+            community. When you request a Content Audit, we ask for your full name,
+            business name, website, email address, phone number (optional), what you want
+            more of, and your preferred contact method. If you subscribe to the
+            newsletter, we collect your email address only. We only collect what we need
+            to handle your enquiry.
           </p>
         </div>
 
@@ -60,7 +63,7 @@ export default function PrivacyPolicyPage() {
             Where it&apos;s stored and who we share it with
           </h2>
           <p className="mt-2">
-            Growth Audit submissions are stored securely on the infrastructure that hosts
+            Form submissions are stored securely on the infrastructure that hosts
             this website and are accessed only by Lumen Growth to handle your enquiry. We
             don&apos;t sell your information or share it with third parties for their own
             marketing. Categories of service providers that may process data on our behalf
@@ -73,10 +76,11 @@ export default function PrivacyPolicyPage() {
         <div>
           <h2 className="text-lg font-semibold text-foreground">Marketing communications</h2>
           <p className="mt-2">
-            Submitting the Growth Audit form is consent for us to contact you about your
-            enquiry — it is not a subscription to a marketing list. We won&apos;t send you
-            ongoing marketing emails unless you separately agree to receive them, and you
-            can ask us to stop contacting you at any time.
+            Submitting a membership application or Content Audit form is consent for us to
+            contact you about that enquiry. It is not a subscription to a marketing list.
+            The newsletter is separate: you only receive it if you subscribe with your
+            email address, and every email includes a way to unsubscribe. You can ask us
+            to stop contacting you at any time.
           </p>
         </div>
 

@@ -104,8 +104,8 @@ function MapBackdrop() {
       className="block h-full w-full"
       aria-hidden="true"
     >
-      <rect x="0" y="0" width="500" height="640" fill="#F1F0ED" />
-      <g fill="#E9E8E4">
+      <rect x="0" y="0" width="500" height="640" fill="#F2F2F1" />
+      <g fill="#EAEAE8">
         <path d="M0,110 L140,116 L150,300 L0,310 Z" />
         <path d="M190,120 L310,126 L316,300 L182,306 Z" />
         <path d="M0,352 L110,348 L114,450 L0,456 Z" />
@@ -116,9 +116,9 @@ function MapBackdrop() {
 
       <path
         d="M0,72 C90,86 180,60 270,74 C360,88 430,66 500,78 L500,102 C430,90 360,112 270,98 C180,84 90,110 0,96 Z"
-        fill="#B3D2E6"
+        fill="#C9D4DA"
       />
-      <text x="60" y="66" fontSize="10" fontStyle="italic" fill="#6795B8" transform="rotate(2 60 66)">
+      <text x="60" y="66" fontSize="10" fontStyle="italic" fill="#7E909B" transform="rotate(2 60 66)">
         Regent&#8217;s Canal
       </text>
 
@@ -147,26 +147,26 @@ function MapBackdrop() {
       <g fill="none" strokeLinecap="round">
         <path
           d="M62,650 C118,440 146,300 158,180 C166,100 188,40 210,-10"
-          stroke="#DBD8D0"
+          stroke="#DBDBD9"
           strokeWidth="17"
         />
-        <path d="M0,330 C150,322 350,338 500,328" stroke="#DEDCD6" strokeWidth="13" />
-        <path d="M330,-10 C324,120 338,260 332,400" stroke="#DEDCD6" strokeWidth="10" />
+        <path d="M0,330 C150,322 350,338 500,328" stroke="#DEDEDC" strokeWidth="13" />
+        <path d="M330,-10 C324,120 338,260 332,400" stroke="#DEDEDC" strokeWidth="10" />
         <path
           d="M0,470 C130,464 270,478 400,470 C440,467 480,472 500,470"
-          stroke="#DEDCD6"
+          stroke="#DEDEDC"
           strokeWidth="10"
         />
-        <path d="M158,182 C230,190 300,184 360,190" stroke="#E2E0DA" strokeWidth="7" />
-        <path d="M96,250 C160,246 220,252 250,250" stroke="#E2E0DA" strokeWidth="7" />
-        <path d="M410,240 C420,320 414,380 420,470" stroke="#E2E0DA" strokeWidth="7" />
-        <path d="M120,330 C116,400 124,440 118,470" stroke="#E2E0DA" strokeWidth="7" />
-        <path d="M330,398 C332,440 328,456 330,472" stroke="#E2E0DA" strokeWidth="7" />
+        <path d="M158,182 C230,190 300,184 360,190" stroke="#E2E2E0" strokeWidth="7" />
+        <path d="M96,250 C160,246 220,252 250,250" stroke="#E2E2E0" strokeWidth="7" />
+        <path d="M410,240 C420,320 414,380 420,470" stroke="#E2E2E0" strokeWidth="7" />
+        <path d="M120,330 C116,400 124,440 118,470" stroke="#E2E2E0" strokeWidth="7" />
+        <path d="M330,398 C332,440 328,456 330,472" stroke="#E2E2E0" strokeWidth="7" />
       </g>
       <g fill="none" strokeLinecap="round">
         <path
           d="M62,650 C118,440 146,300 158,180 C166,100 188,40 210,-10"
-          stroke="#F2EFE8"
+          stroke="#FCFCFB"
           strokeWidth="12"
         />
         <path d="M0,330 C150,322 350,338 500,328" stroke="#FFFFFF" strokeWidth="9" />
@@ -183,7 +183,7 @@ function MapBackdrop() {
         <path d="M330,398 C332,440 328,456 330,472" stroke="#FFFFFF" strokeWidth="4.5" />
       </g>
 
-      <g fontSize="10" fill="#8E8A80">
+      <g fontSize="10" fill="#8F8F8A">
         <text x="126" y="304" transform="rotate(-81 126 304)">Mare Street</text>
         <text x="198" y="322">Graham Road</text>
         <text x="342" y="120" transform="rotate(87 342 120)">Kingsland Rd</text>
@@ -191,7 +191,7 @@ function MapBackdrop() {
       </g>
 
       <g>
-        <g fill="#CDCBC5">
+        <g fill="#CCCCCA">
           <rect x="28" y="164" width="44" height="12" />
           <rect x="80" y="167" width="30" height="9" />
           <rect x="30" y="215" width="34" height="11" />
@@ -217,7 +217,7 @@ function MapBackdrop() {
           <rect x="274" y="528" width="46" height="12" />
           <rect x="330" y="530" width="34" height="8" />
         </g>
-        <g fill="#E9E8E3" stroke="#DAD8D2" strokeWidth="0.6">
+        <g fill="#E9E9E7" stroke="#DBDBD9" strokeWidth="0.6">
           <rect x="28" y="138" width="44" height="26" rx="1" />
           <rect x="80" y="143" width="30" height="24" rx="1" />
           <rect x="30" y="185" width="34" height="30" rx="1" />
@@ -258,7 +258,7 @@ function StarRating({ rating }: { rating: number }) {
             <svg width="17" height="17" viewBox="0 0 18 18">
               <path
                 d="M9 1 L11.4 6.2 L17 6.8 L12.8 10.6 L14 16.2 L9 13.3 L4 16.2 L5.2 10.6 L1 6.8 L6.6 6.2 Z"
-                fill="#E5E3DD"
+                fill="#E4E4E1"
               />
             </svg>
             <div className="absolute inset-0 overflow-hidden" style={{ width: `${fill}%` }}>
@@ -281,6 +281,8 @@ type MapTransformationProps = {
   loop?: boolean;
   autostart?: boolean;
   className?: string;
+  /* Set when rendered inside a charcoal section so the caption stays legible. */
+  onDark?: boolean;
 };
 
 export function MapTransformation({
@@ -288,6 +290,7 @@ export function MapTransformation({
   loop = false,
   autostart = true,
   className,
+  onDark = false,
 }: MapTransformationProps) {
   const shouldReduceMotion = useReducedMotion();
   const lastStep = STEPS.length - 1;
@@ -392,7 +395,7 @@ export function MapTransformation({
         ref={rootRef}
         onClick={restart}
         aria-label="Illustrative animation of a fictional business becoming more visible in local search. Activate to replay."
-        className="relative block h-[600px] w-full cursor-pointer touch-manipulation overflow-hidden rounded-2xl bg-[#ECEBE8] text-left shadow-[0_12px_40px_rgba(46,42,36,0.14)] select-none focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none sm:h-[640px]"
+        className="relative block h-[500px] w-full cursor-pointer touch-manipulation overflow-hidden border border-foreground/20 bg-[#ECECEB] text-left shadow-[0_12px_40px_rgba(35,35,35,0.12)] select-none focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none sm:h-[560px]"
       >
         {/* 3D-tilted map with a slow living-camera drift */}
         <div
@@ -423,7 +426,7 @@ export function MapTransformation({
             className="pointer-events-none absolute h-60 w-60 rounded-full"
             style={{
               left: "calc(50% - 120px)",
-              top: 68,
+              top: "8%",
               background:
                 "radial-gradient(circle, color-mix(in oklch, var(--warm), transparent 62%) 0%, transparent 68%)",
             }}
@@ -437,11 +440,11 @@ export function MapTransformation({
         {/* Upright pin (billboard, not tilted with the map) */}
         <div
           className="pointer-events-none absolute"
-          style={{ left: "calc(50% - 45px)", top: 168 }}
+          style={{ left: "calc(50% - 45px)", top: "24%" }}
           aria-hidden="true"
         >
           <svg width="90" height="76" viewBox="-45 -52 90 76" className="overflow-visible">
-            <ellipse cy="14" rx="12" ry="4" fill="rgba(46,42,36,0.18)" />
+            <ellipse cy="14" rx="12" ry="4" fill="rgba(35,35,35,0.16)" />
             {shouldReduceMotion ? null : (
               <>
                 <motion.circle
@@ -484,7 +487,7 @@ export function MapTransformation({
         {/* Replay hint after the sequence completes */}
         {atEnd && !loop && !shouldReduceMotion ? (
           <motion.div
-            className="absolute top-4 right-3.5 z-[2] flex items-center gap-1.5 rounded-full bg-white/90 px-3 py-1.5 text-xs text-[#5C5548] shadow-[0_3px_10px_rgba(46,42,36,0.1)]"
+            className="absolute top-4 right-3.5 z-[2] flex items-center gap-1.5 rounded-full bg-white/90 px-3 py-1.5 text-xs text-[#565656] shadow-[0_3px_10px_rgba(35,35,35,0.09)]"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.8 }}
@@ -500,15 +503,15 @@ export function MapTransformation({
           style={{ opacity: visible ? 1 : 0, transition: "opacity 0.45s ease" }}
         >
           {/* Search rank chip */}
-          <div className="absolute top-3.5 left-3.5 flex items-center gap-2 rounded-full bg-white px-3 py-2 text-[13px] text-[#2E2A24] shadow-[0_4px_14px_rgba(46,42,36,0.12)]">
-            <Search className="size-3.5 text-[#8A857B]" aria-hidden="true" />
-            <span className="text-[#5C5548]">dentist near me</span>
+          <div className="absolute top-3.5 left-3.5 flex items-center gap-2 rounded-full bg-white px-3 py-2 text-[13px] text-[#232323] shadow-[0_4px_14px_rgba(35,35,35,0.10)]">
+            <Search className="size-3.5 text-[#8B8B87]" aria-hidden="true" />
+            <span className="text-[#565656]">dentist near me</span>
             <span
               className="inline-flex h-[22px] min-w-[26px] items-center justify-center rounded-full px-1.5 text-xs font-bold"
               style={{
                 transition: "background 0.6s, color 0.6s",
-                background: rank === 1 ? "var(--warm)" : "#EFEDE8",
-                color: rank === 1 ? "#FFFFFF" : "#8A857B",
+                background: rank === 1 ? "var(--warm)" : "#EFEFED",
+                color: rank === 1 ? "#232323" : "#8B8B87",
               }}
             >
               #{rank}
@@ -518,18 +521,18 @@ export function MapTransformation({
           {/* Customer review (final step only) */}
           {current.quote ? (
             <motion.div
-              className="absolute top-16 right-3.5 w-[230px] rounded-[14px] bg-white px-3.5 py-3 shadow-[0_8px_24px_rgba(46,42,36,0.16)]"
+              className="absolute top-16 right-3.5 w-[230px] rounded-[14px] bg-white px-3.5 py-3 shadow-[0_8px_24px_rgba(35,35,35,0.14)]"
               {...(shouldReduceMotion ? {} : popIn)}
             >
               <div className="flex items-center gap-2">
                 <div className="flex size-[26px] items-center justify-center rounded-full bg-charcoal text-[11px] font-bold text-white">
                   SM
                 </div>
-                <div className="text-xs font-semibold text-[#2E2A24]">Sarah M.</div>
+                <div className="text-xs font-semibold text-[#232323]">Sarah M.</div>
                 <div className="text-[11px] tracking-widest text-warm">★★★★★</div>
               </div>
-              <div className="mt-1.5 text-xs leading-relaxed text-[#5C5548]">
-                &ldquo;Found them right at the top of Google — best dentist I&rsquo;ve been
+              <div className="mt-1.5 text-xs leading-relaxed text-[#565656]">
+                &ldquo;Found them right at the top of Google. Best dentist I&rsquo;ve been
                 to in London.&rdquo;
               </div>
             </motion.div>
@@ -537,14 +540,14 @@ export function MapTransformation({
 
           {/* Business listing card */}
           <div
-            className="absolute right-3.5 bottom-3.5 left-3.5 flex flex-col gap-2.5 rounded-2xl bg-white p-4 pb-3.5 shadow-[0_10px_30px_rgba(46,42,36,0.18)]"
+            className="absolute right-3.5 bottom-3.5 left-3.5 flex flex-col gap-2.5 rounded-2xl bg-white p-4 pb-3.5 shadow-[0_10px_30px_rgba(35,35,35,0.16)]"
             style={{
               transform: visible ? "translateY(0px) scale(1)" : "translateY(30px) scale(0.96)",
               transition: "transform 0.55s cubic-bezier(0.2, 0.9, 0.25, 1.12)",
             }}
           >
             <div className="flex items-center gap-2">
-              <div className="text-[19px] font-bold tracking-[-0.01em] text-[#2E2A24]">
+              <div className="text-[19px] font-bold tracking-[-0.01em] text-[#232323]">
                 Brightwood Dental Care
               </div>
               {current.verified ? (
@@ -563,7 +566,7 @@ export function MapTransformation({
                   />
                   <path
                     d="M5.6 8.6 L8 11 L12.4 6.4"
-                    stroke="#FFFFFF"
+                    stroke="#232323"
                     strokeWidth="1.8"
                     fill="none"
                     strokeLinecap="round"
@@ -574,18 +577,18 @@ export function MapTransformation({
             </div>
 
             <div className="flex items-center gap-2">
-              <span className="text-[15px] font-bold text-[#2E2A24]">
+              <span className="text-[15px] font-bold text-[#232323]">
                 {tweened.rating.toFixed(1)}
               </span>
               <StarRating rating={tweened.rating} />
-              <span className="text-[13px] text-[#8A857B]">
+              <span className="text-[13px] text-[#8B8B87]">
                 {tweened.reviews < 10
                   ? `(${tweened.reviews})`
                   : `(${tweened.reviews} reviews)`}
               </span>
             </div>
 
-            <div className="text-[13px] leading-relaxed text-[#5C5548]">{current.desc}</div>
+            <div className="text-[13px] leading-relaxed text-[#565656]">{current.desc}</div>
 
             {current.photos > 0 ? (
               <motion.div className="flex gap-2" {...(shouldReduceMotion ? {} : popIn)}>
@@ -603,7 +606,7 @@ export function MapTransformation({
                       style={{ objectPosition: photo.position }}
                     />
                     {photo.badge ? (
-                      <div className="absolute inset-0 flex items-center justify-center bg-[rgba(46,42,36,0.45)] text-sm font-semibold text-white">
+                      <div className="absolute inset-0 flex items-center justify-center bg-[rgba(35,35,35,0.45)] text-sm font-semibold text-white">
                         {photo.badge}
                       </div>
                     ) : null}
@@ -619,10 +622,10 @@ export function MapTransformation({
                   className="flex w-14 flex-col items-center gap-1"
                   {...(shouldReduceMotion ? {} : popIn)}
                 >
-                  <div className="flex size-11 items-center justify-center rounded-full border border-[#E5E3DE] bg-[#F5F4F1] text-[#4A463F]">
+                  <div className="flex size-11 items-center justify-center rounded-full border border-[#E6E6E3] bg-[#F6F6F4] text-[#474747]">
                     <Icon className="size-[18px]" strokeWidth={1.7} aria-hidden="true" />
                   </div>
-                  <span className="text-[11.5px] text-[#5C5548]">{label}</span>
+                  <span className="text-[11.5px] text-[#565656]">{label}</span>
                 </motion.div>
               ))}
             </div>
@@ -632,20 +635,20 @@ export function MapTransformation({
                 className="flex flex-wrap items-center gap-2"
                 {...(shouldReduceMotion ? {} : popIn)}
               >
-                <span className="text-[11.5px] text-[#8A857B]">Also on</span>
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-[#E5E3DE] px-2.5 py-1 text-xs text-[#2E2A24]">
+                <span className="text-[11.5px] text-[#8B8B87]">Also on</span>
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-[#E6E6E3] px-2.5 py-1 text-xs text-[#232323]">
                   <span className="inline-flex size-[13px] items-center justify-center rounded-[2px] bg-[#00B67A] text-[9px] text-white">
                     ★
                   </span>
                   Trustpilot 4.6
                 </span>
-                <span className="inline-flex items-center rounded-full border border-[#E5E3DE] px-2.5 py-1 text-xs text-[#2E2A24]">
+                <span className="inline-flex items-center rounded-full border border-[#E6E6E3] px-2.5 py-1 text-xs text-[#232323]">
                   Yell.com
                 </span>
-                <span className="inline-flex items-center rounded-full border border-[#E5E3DE] px-2.5 py-1 text-xs text-[#2E2A24]">
+                <span className="inline-flex items-center rounded-full border border-[#E6E6E3] px-2.5 py-1 text-xs text-[#232323]">
                   NHS.uk
                 </span>
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-[#E5E3DE] px-2.5 py-1 text-xs text-[#2E2A24]">
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-[#E6E6E3] px-2.5 py-1 text-xs text-[#232323]">
                   <svg width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true">
                     <rect x="1" y="1" width="12" height="12" rx="3.6" stroke="#B24C86" strokeWidth="1.5" />
                     <circle cx="7" cy="7" r="2.7" stroke="#B24C86" strokeWidth="1.5" />
@@ -668,7 +671,7 @@ export function MapTransformation({
                         ? "var(--warm)"
                         : i < step
                           ? "color-mix(in oklch, var(--warm), white 65%)"
-                          : "#E3E1DB",
+                          : "#E3E3E0",
                     transform: i === step ? "scale(1.35)" : "scale(1)",
                   }}
                 />
@@ -678,8 +681,8 @@ export function MapTransformation({
         </div>
       </button>
 
-      <p className="mt-3 text-xs text-muted-foreground">
-        An illustrative, fictional example of the journey we work towards — not a client
+      <p className={cn("mt-3 text-xs", onDark ? "text-charcoal-foreground/60" : "text-muted-foreground")}>
+        An illustrative, fictional example of the journey we work towards, not a client
         result.
       </p>
     </div>

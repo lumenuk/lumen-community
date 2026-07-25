@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { LumenLogo } from "@/components/layout/logo";
-import { footerNav, siteConfig, targetAreas } from "@/lib/site-config";
+import { socialIconComponents } from "@/components/layout/social-icons";
+import { footerNav, siteConfig, socialLinks } from "@/lib/site-config";
 
 export function Footer() {
   return (
@@ -10,15 +11,31 @@ export function Footer() {
           <div className="max-w-sm">
             <LumenLogo />
             <p className="mt-4 text-sm leading-relaxed text-charcoal-foreground/70">
-              A London marketing agency for established businesses across{" "}
-              {targetAreas.slice(1).join(", ")}, and beyond.
+              A London business community with social media support built in.
             </p>
+            <div className="mt-6 flex gap-3">
+              {socialLinks.map((social) => {
+                const Icon = socialIconComponents[social.name];
+                return (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Lumen Growth on ${social.name} (opens in a new tab)`}
+                    className="flex size-10 items-center justify-center border border-white/20 text-charcoal-foreground/80 transition-colors hover:border-warm hover:text-warm"
+                  >
+                    <Icon />
+                  </a>
+                );
+              })}
+            </div>
           </div>
 
           <div>
-            <p className="text-sm font-medium text-charcoal-foreground">Company</p>
+            <p className="text-sm font-medium text-charcoal-foreground">Explore</p>
             <ul className="mt-4 space-y-2.5">
-              {footerNav.company.map((item) => (
+              {footerNav.explore.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}

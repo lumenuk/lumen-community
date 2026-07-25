@@ -30,8 +30,10 @@ Lumen Growth's website exists to turn visitors (mostly from cold outreach) into 
 
 The website's job stops at step 3. Never build UI that implies steps 4–8 happen automatically or instantly (no "instant quote," no "book now and pay," no automated pricing calculator that outputs a binding number).
 
-**Single primary CTA:**
-- The one primary conversion action across the whole site is requesting a Growth Audit. Every page should have a clear, low-pressure path to it, but only one primary CTA per page — don't compete with multiple equally-weighted CTAs.
+**Two conversion paths (REPOSITIONED July 2026):**
+- PRIMARY: "Apply to Join the Community" → /contact membership application form (fields: full name, business name, website optional, email, phone optional, about your business, what you hope to get from the community).
+- SECONDARY: "Request a Free Content Audit" → /contact?enquiry=audit audit form (fields: full name, business name, website, email, phone optional, what you want more of, preferred contact method). RENAMED July 2026 (owner decision): the site's free audit offer is a Content Audit (a review of the business's social media presence and content), replacing the SEO-flavoured Growth Audit. SEO audits are offered to companies via outreach only, never as the site offer. "Growth Audit" elsewhere in this skill refers to this same audit path — read it as the Content Audit.
+- Only one primary-styled CTA per page; the audit CTA is styled as secondary wherever both appear. Consent checkbox (unticked) stays on both forms per lumen-security.
 - Secondary actions (view services, read FAQ, read blog post) are fine as lower-emphasis links/buttons, never styled to compete with the primary CTA.
 
 **Growth Audit form field spec (build exactly this, no more, no fewer without the user's request):**

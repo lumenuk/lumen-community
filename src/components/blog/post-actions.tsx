@@ -99,7 +99,7 @@ export function PostActions({ slug, title }: { slug: string; title: string }) {
       <Button variant="outline" size="sm" onClick={share}>
         {shared ? (
           <>
-            <Check className="size-4 text-warm" aria-hidden="true" />
+            <Check className="size-4 text-warm-deep" aria-hidden="true" />
             Link copied
           </>
         ) : (

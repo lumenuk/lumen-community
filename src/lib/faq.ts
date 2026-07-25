@@ -5,73 +5,53 @@ export type FaqEntry = {
 
 export const faqItems: FaqEntry[] = [
   {
-    question: "How long does SEO take?",
+    question: "What is Lumen Growth?",
     answer:
-      "Honestly: months, not weeks. Google Business Profile improvements and paid advertising tend to show movement within weeks, but organic SEO and reputation-building compound over three to six months and beyond. We'll give you a realistic timeline for your specific situation during the Growth Audit call, not a generic promise.",
+      "Lumen Growth is a London business community with a social media services arm. Members get social media support, marketing guidance, and access to a network of partners and people who can help when it matters.",
   },
   {
-    question: "Do you publish prices?",
+    question: "What is the Lumen Community?",
     answer:
-      "No, and it's deliberate. A dental clinic in Fulham with strong reviews and a construction firm with no online presence need very different work, so a fixed price list would either overcharge one or under-serve the other. Every package is shaped after the Growth Audit, and we'll always be clear about costs before you commit to anything.",
+      "The Lumen Community is our growing network of London business owners. It comes with structure: monthly check-in support, member-to-member introductions, partner deals and perks, and a shared space to grow alongside other owners.",
   },
   {
-    question: "What happens after I request a Growth Audit?",
+    question: "Who is the community for?",
     answer:
-      "We review your current visibility — your website, Google Business Profile, reviews, search presence, and social activity — and then call you to talk through what we found. No obligation, no automated quote, no hard sell. If we're not the right fit for your business, we'll say so directly.",
+      "London business owners who want people in their corner. If you run a business and you'd rather grow alongside others than figure everything out alone, it's built for you. Apply through the contact page and we'll have an honest conversation about fit.",
   },
   {
-    question: "Do you guarantee results?",
+    question: "What do members get?",
     answer:
-      "No, and you should be wary of any agency that does. Nobody controls Google's rankings or promises a fixed number of enquiries honestly. What we do commit to is a clear plan, consistent work on the things that drive visibility and trust, and plain-English reporting so you can see exactly what's improving.",
+      "One-to-one check-ins with us, monthly or quarterly, plus a call whenever something urgent comes up. A members' group chat for quick asks and introductions. In-person London meetups and events. LinkedIn networking alongside the community, partner perks negotiated for the group, and priority on our social media services.",
   },
   {
-    question: "Do you work with new businesses?",
+    question: "How much does membership cost?",
     answer:
-      "Our focus is established local businesses that already do good work but aren't visible enough online. If you're newly opened but serious — say, a new clinic or gym with real premises and customers — request a Growth Audit and we'll tell you honestly whether it's the right time to invest in marketing.",
+      "Your first week is free, so you can see if it's for you before paying anything. After that there's a monthly membership fee, which we talk through on your application call rather than publishing figures. Founder members join with no tie-in.",
   },
   {
-    question: "Do you only work in London?",
+    question: "Do you offer social media management?",
     answer:
-      "London is our focus, particularly Battersea, Greenwich, Hackney, Tower Hamlets, Fulham, and Richmond. We're open to discussing businesses just outside these areas, especially where local search visibility works the same way.",
+      "Yes. Content creation, day-to-day account management, strategy, and growth across Instagram, Facebook, and LinkedIn. We take on a limited number of businesses at a time, and members come first — but you don't have to join the community to work with us. We also offer general marketing and SEO guidance: advice, basic on-page SEO, and Google Business Profile support.",
   },
   {
-    question: "Do you manage social media?",
+    question: "How do I apply to join?",
     answer:
-      "Yes — both the strategy (which platforms are actually worth your time) and the ongoing management (content, scheduling, and keeping your profiles active and credible). For some lower-margin businesses, a lighter social-only arrangement can make sense; we'll tell you if that's the better fit.",
+      "Use the membership form on the contact page. Tell us about your business and what you're hoping to get from the community, and we'll be in touch to talk it through. No obligation.",
   },
   {
-    question: "Do you run ads?",
+    question: "How do I request a Content Audit?",
     answer:
-      "Yes. Paid advertising on Google and social platforms, with proper tracking so you can see what enquiries your budget actually produced. We'll only recommend paid campaigns where they make commercial sense for your business, not as a default.",
+      "Use the Content Audit form on the contact page (there's a button for it on the homepage too). It takes a couple of minutes, and it's free.",
   },
   {
-    question: "Is there a minimum contract length?",
+    question: "What is a Content Audit?",
     answer:
-      "Most of our work is agreed on a minimum term, typically a few months, because SEO, reviews, and social presence take sustained effort to move. We'll be upfront about the term before you commit to anything.",
-  },
-  {
-    question: "Who actually does the work?",
-    answer:
-      "Lumen Growth manages your account and does the strategic and hands-on work directly. We're a small, focused team, not a reseller passing your account to an anonymous offshore team.",
+      "A free review of how your business comes across on social media: your profiles, your content, how often you post, and how professional it all looks next to businesses like yours. We look at what's working and what's missing, then call you to talk through what we found. No automated report, no hard sell.",
   },
   {
     question: "What happens to our business information?",
     answer:
-      "We only use the details you share to assess your enquiry and prepare for a call. See our Privacy Policy for exactly what we collect, why, and how long we keep it.",
+      "We only use the details you share to assess your enquiry and prepare for a conversation. See our Privacy Policy for exactly what we collect, why, and how long we keep it.",
   },
 ];
-
-/* Subset shown on the homepage FAQ preview. */
-export const homepageFaqQuestions = [
-  "How long does SEO take?",
-  "Do you publish prices?",
-  "What happens after I request a Growth Audit?",
-  "Do you guarantee results?",
-  "Do you only work in London?",
-];
-
-export function getHomepageFaqItems(): FaqEntry[] {
-  return homepageFaqQuestions
-    .map((question) => faqItems.find((item) => item.question === question))
-    .filter((item): item is FaqEntry => Boolean(item));
-}

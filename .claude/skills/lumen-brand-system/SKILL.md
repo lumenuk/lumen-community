@@ -19,8 +19,10 @@ This skill defines who Lumen Growth is as a brand: positioning, tone, personalit
 
 ## 3. Core rules
 
-**Who Lumen Growth is:**
-- A London-based B2B marketing agency for good, established, credible local businesses — not startups, not e-commerce, not consumer apps.
+**Who Lumen Growth is (REPOSITIONED July 2026):**
+- A **London business community with a social media services arm** — no longer positioned as a marketing/SEO agency. Members get social media support, marketing guidance, and access to a network of partners and people who can help when it matters.
+- The community sub-brand is **"Lumen Community"** (used within the site, never as a separate domain).
+- The advisory/finance/exit side is referenced ONLY with one approved soft line ("when the bigger moments come: growth, finance, or planning your next chapter, we're in your corner") — never in specific terms, never as regulated financial services, investment arrangement, or deal-brokering.
 - Brand-led, not founder-led. No "meet the founder" hero sections, no first-person founder narrative driving the homepage. The founder is young and London-based, but the site should read as an agency/institution, not a personal brand.
 - Serious, credible, strategic, warm, modern, minimal. Corporate enough to be trusted by a dental clinic owner or a construction company director — people who are risk-averse with their money and reputation.
 - Not playful, not "fun startup." Not luxury-fashion cold. Not agency-bro hustle culture. Not overly technical/jargon-heavy either — clients are business owners, not marketers.
@@ -33,7 +35,7 @@ This skill defines who Lumen Growth is as a brand: positioning, tone, personalit
 
 **Naming conventions:**
 - The company name is always "Lumen Growth" in running text on first mention per page section; "Lumen" is acceptable shorthand after that.
-- "Growth Audit" is the fixed name for the primary lead-generation offer. Keep this term consistent everywhere (nav, CTAs, forms, page titles) — do not vary it ("Growth Review," "Free Audit," etc. are not interchangeable unless the user explicitly renames it).
+- Two fixed CTAs (owner-confirmed July 2026): primary **"Apply to Join the Community"**, secondary **"Request a Free Growth Audit"**. Both land on /contact. Keep exact wording consistent everywhere; "Growth Audit" remains the fixed offer name.
 - Do not invent cute campaign names, class-based tiers, or gimmicky feature names unless the user approves them in `lumen-product-strategy`.
 
 **Light/visibility metaphor:**
@@ -42,7 +44,7 @@ This skill defines who Lumen Growth is as a brand: positioning, tone, personalit
 ## 4. Business-specific instructions
 
 - Every page should implicitly answer: "why should a real London business trust this agency with their marketing budget?" Legitimacy signals (clear process, clear services, professional design, real specificity about industries and areas) do more work than personality.
-- Reference target industries and areas naturally and specifically where relevant (dental clinics, private healthcare, property companies, construction and trades, gyms and fitness businesses, beauty and aesthetics clinics; Battersea, Greenwich, Hackney, Tower Hamlets, Fulham, Richmond, London broadly) — this is what makes the site feel like a real local agency rather than a generic template.
+- Do NOT use sector/industry-targeting language on the site (owner rule, July 2026). "London business owners" is the audience framing. London-local specificity is still welcome in tone, just not industry lists.
 - It's acceptable to mention that lighter, social-media-only support may suit some lower-margin businesses, but restaurants and low-margin businesses are not a core target and should not be featured as example clients or case studies.
 - Because the business is new, do not fabricate client counts, years in business, testimonials, or results. Legitimacy must come from clarity of process, specificity of offer, and professionalism of execution — not fake social proof. Flag to the user anywhere a page would need a testimonial, logo, or stat, and mark it as a placeholder pending real content.
 - The brand-led (not founder-led) instruction means: no large personal photo hero, no "hi, I'm [name]" homepage copy. A short, factual "about" section explaining who runs Lumen Growth and why is fine on an About/How We Work page, but never as the primary homepage narrative.
