@@ -27,8 +27,9 @@ const websiteShape = z
 const consent = z.literal("true", {
   error: "You must consent to being contacted before submitting.",
 });
-/* Honeypot: must stay empty; bots that fill every field trip it. */
-const honeypot = z.string().max(0).optional().or(z.literal(""));
+/* Honeypot: humans leave it empty. Any value must pass validation so the
+   action can return a fake success instead of an error that tips off bots. */
+const honeypot = z.string().optional();
 
 export const membershipSchema = z.object({
   fullName,
