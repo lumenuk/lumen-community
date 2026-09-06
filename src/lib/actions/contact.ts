@@ -97,7 +97,7 @@ export async function submitMembershipApplication(
       company: formData.get("company") ?? "",
     },
     storeType: "membership",
-    subject: (data) => `Community application: ${data.businessName}`,
+    subject: (data) => `Call request: ${data.businessName}`,
     lines: (data) => [
       `Name: ${data.fullName}`,
       `Business: ${data.businessName}`,
@@ -108,11 +108,11 @@ export async function submitMembershipApplication(
       "About the business:",
       data.aboutBusiness,
       "",
-      "Hoping to get from the community:",
+      "What they want to hand off:",
       data.hopingFor,
     ],
     successMessage:
-      "Thanks, your application has been received. We'll review it and be in touch soon.",
+      "Thanks, your request has been received. We'll be in touch to book a call soon.",
   });
 }
 
@@ -134,7 +134,7 @@ export async function submitGrowthAuditRequest(
       company: formData.get("company") ?? "",
     },
     storeType: "growth-audit",
-    subject: (data) => `Content Audit request: ${data.businessName}`,
+    subject: (data) => `AI audit request: ${data.businessName}`,
     lines: (data) => [
       `Name: ${data.fullName}`,
       `Business: ${data.businessName}`,
@@ -145,6 +145,6 @@ export async function submitGrowthAuditRequest(
       `Preferred contact method: ${data.preferredContact}`,
     ],
     successMessage:
-      "Thanks, your Content Audit request has been received. We'll review your business and be in touch soon.",
+      "Thanks, your AI audit request has been received. We'll review your business and be in touch soon.",
   });
 }

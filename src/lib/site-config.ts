@@ -1,28 +1,25 @@
 export const siteConfig = {
   name: "Lumen Growth",
-  communityName: "Lumen Community",
-  tagline: "A London business community with your growth in mind.",
+  tagline: "AI systems that run your business",
   description:
-    "Lumen Growth is a London business community where members get social media support, marketing guidance, and a network of people who can help when it matters.",
+    "Lumen Growth is an AI agency for UK businesses. We build and steer teams of AI agents that recover leads, work together, and answer the phone — so the work that used to stall gets done.",
   url: "https://www.lumengrowth.co.uk",
   contactEmail: "lumen.solutions.management@gmail.com",
   locationLabel: "London, UK",
 };
 
 export const mainNav = [
-  { label: "Community", href: "/community" },
-  { label: "Services", href: "/services" },
-  { label: "Blog", href: "/blog" },
-  { label: "Contact", href: "/contact" },
+  { label: "Solutions", href: "/services" },
+  { label: "Evidence", href: "/#evidence" },
+  { label: "FAQ", href: "/faq" },
 ] as const;
 
 export const footerNav = {
   explore: [
-    { label: "Community", href: "/community" },
-    { label: "Services", href: "/services" },
-    { label: "Blog", href: "/blog" },
-    { label: "Contact", href: "/contact" },
+    { label: "Solutions", href: "/services" },
+    { label: "Evidence", href: "/#evidence" },
     { label: "FAQ", href: "/faq" },
+    { label: "Book a call", href: "/contact" },
   ],
   legal: [
     { label: "Privacy Policy", href: "/privacy-policy" },
@@ -30,89 +27,26 @@ export const footerNav = {
   ],
 };
 
-/* Primary conversion: joining the community. Secondary: the free Content
-   Audit (owner decision, July 2026 — SEO audits are offered on outreach only,
-   never as the site offer). Both land on /contact; ?enquiry=audit preselects
-   the audit form. */
+/* Primary conversion: a booked call. Secondary: exploring the Scout product.
+   Both are honest, low-pressure entry points into an early-stage agency. */
 export const primaryCta = {
-  label: "Apply to Join the Community",
+  label: "Book a call",
   href: "/contact",
 };
 
-export const auditCta = {
-  label: "Request a Free Content Audit",
-  href: "/contact?enquiry=audit",
+export const secondaryCta = {
+  label: "Explore Scout",
+  href: "/services",
+};
+
+/* Client sign-in — the future portal where customers run their agent / lead-gen
+   CRM. Not built yet; links to a "coming soon" placeholder page for now. */
+export const signInCta = {
+  label: "Sign in",
+  href: "/sign-in",
 };
 
 /* Facebook and LinkedIn pending — add once those profiles exist. */
 export const socialLinks = [
   { name: "Instagram", href: "https://www.instagram.com/lumengrowth.uk/" },
-] as const;
-
-/* Retained for potential reuse (process slideshow component). Not currently
-   rendered anywhere since the agency-era How It Works page was removed. */
-export const methodSteps = [
-  {
-    step: 1,
-    title: "Research",
-    description:
-      "We learn your market: who you compete with locally, what your customers search for, and where they decide who to trust.",
-  },
-  {
-    step: 2,
-    title: "Audit",
-    description:
-      "We assess your current visibility: website, Google Business Profile, reviews, and social presence, and find where enquiries are being lost.",
-  },
-  {
-    step: 3,
-    title: "Strategy",
-    description:
-      "We agree a focused plan: which channels matter for your business, in what order, and what success looks like commercially.",
-  },
-  {
-    step: 4,
-    title: "Build and optimise",
-    description:
-      "We do the work: profiles, pages, content, campaigns, prioritising the fixes that affect enquiries soonest.",
-  },
-  {
-    step: 5,
-    title: "Publish and launch",
-    description:
-      "Improvements go live steadily and deliberately, so your business looks consistent and credible at every touchpoint.",
-  },
-  {
-    step: 6,
-    title: "Measure and improve",
-    description:
-      "Plain-English reporting on what moved and what didn't, and the next round of improvements based on real results.",
-  },
-] as const;
-
-export const journeySteps = [
-  {
-    step: 1,
-    title: "You get in touch",
-    description:
-      "Apply to join the community or request a free Content Audit. No obligation, no hard sell.",
-  },
-  {
-    step: 2,
-    title: "We review your business",
-    description:
-      "We look at your current visibility, reviews, search presence, and social activity, and identify where you're losing enquiries.",
-  },
-  {
-    step: 3,
-    title: "We call you",
-    description:
-      "A short call to understand your business, your goals, and whether we're a good fit for each other.",
-  },
-  {
-    step: 4,
-    title: "We agree a plan",
-    description:
-      "If it makes sense to work together, we discuss the right support for your business.",
-  },
 ] as const;

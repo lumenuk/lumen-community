@@ -1,105 +1,136 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { ArrowRight } from "lucide-react";
+import { ArrowUpRight, Check } from "lucide-react";
 import { Section } from "@/components/section/section";
-import { PageIntro } from "@/components/section/page-intro";
 import { Reveal } from "@/components/motion/reveal";
-import { MapTransformation } from "@/components/motion/map-transformation";
 import { Button } from "@/components/ui/button";
 import { primaryCta } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: "Services",
+  title: "Solutions",
   description:
-    "Social media content, management, strategy, and growth across Instagram, Facebook, and LinkedIn, plus marketing and SEO guidance for London businesses.",
+    "The AI systems Lumen Growth builds and steers: Scout agent teams, Archer lead recovery, and Voice answering and callbacks. Scoped against a call and your existing data.",
   alternates: { canonical: "/services" },
 };
 
-const socialMediaServices = [
+type SolutionCta = "contact" | "soon";
+
+const solutions: {
+  kicker: string;
+  name: string;
+  summary: string;
+  points: string[];
+  cta: SolutionCta;
+}[] = [
   {
-    name: "Content creation",
-    description:
-      "Posts, stories, and short-form video planned and produced for you, in your voice, so your profiles look alive without eating your week.",
+    kicker: "AI AGENT TEAMS",
+    name: "Scout",
+    summary:
+      "A team of AI agents that research, verify, negotiate and report back — handing work to each other instead of stalling on one assistant.",
+    points: [
+      "Tailored to one recurring decision: a sourcing desk, a diligence team, a research crew",
+      "A critic agent reviews recommendations before they reach you",
+      "Anything binding is held for your approval first",
+    ],
+    cta: "contact",
   },
   {
-    name: "Account management",
-    description:
-      "Day-to-day running of your profiles: scheduling, replies, community management, and keeping everything consistent and credible.",
+    kicker: "LEAD RECOVERY",
+    name: "Archer",
+    summary:
+      "The dormant leads you already paid for, worked across email, WhatsApp and voice until they qualify or die.",
+    points: [
+      "Re-engages old enquiries in your existing CRM — no migration",
+      "Qualifies and books, drafts replies for anything off-script",
+      "Reports back on what moved and what didn't",
+    ],
+    cta: "contact",
   },
   {
-    name: "Strategy",
-    description:
-      "A clear plan for which platforms deserve your time and what to post on them, tied to what your business actually needs more of.",
-  },
-  {
-    name: "Growth",
-    description:
-      "Steady, honest audience building. Real followers who could become customers, never bought numbers or engagement tricks.",
+    kicker: "VOICE AGENTS",
+    name: "Answering & callbacks",
+    summary:
+      "Out-of-hours pick-up, overflow cover, and calls back to anyone who abandoned a form.",
+    points: [
+      "Answers when you can't, in a voice scoped to your business",
+      "Calls back abandoned forms and missed enquiries",
+      "Hands anything it can't settle to a human, with context",
+    ],
+    cta: "soon",
   },
 ];
 
-export default function ServicesPage() {
+export default function SolutionsPage() {
   return (
     <>
-      <Section tone="light">
-        <PageIntro
-          title="Social media, handled"
-          description="Content, management, strategy, and growth across Instagram, Facebook, and LinkedIn. We take on a limited number of businesses at a time: community members come first, and founder members join at lower monthly rates. Open to non-members too, with no prices published — every engagement is shaped around your business after a conversation."
-        />
-
-        <div className="mt-14 grid gap-x-12 gap-y-10 sm:grid-cols-2">
-          {socialMediaServices.map((service, index) => (
-            <Reveal key={service.name} delay={(index % 2) * 0.06}>
-              <div className="border-t border-foreground pt-5">
-                <h2 className="text-xl font-semibold text-foreground">{service.name}</h2>
-                <p className="mt-2.5 max-w-md text-base leading-relaxed text-muted-foreground">
-                  {service.description}
+      <Section tone="charcoal">
+        <div className="grid gap-x-12 gap-y-12 lg:grid-cols-3">
+          {solutions.map((solution, index) => (
+            <Reveal key={solution.name} delay={(index % 3) * 0.06}>
+              <div className="flex h-full flex-col border-t border-white/15 pt-5">
+                <p className="text-[11px] font-medium tracking-[0.14em] text-[#7f92ff]">
+                  {solution.kicker}
                 </p>
+                <h2 className="mt-3 text-2xl font-semibold">{solution.name}</h2>
+                <p className="mt-3 text-base leading-relaxed text-charcoal-foreground/75">
+                  {solution.summary}
+                </p>
+                <ul className="mt-6 space-y-3">
+                  {solution.points.map((point) => (
+                    <li
+                      key={point}
+                      className="flex gap-3 text-sm leading-relaxed text-charcoal-foreground/85"
+                    >
+                      <Check className="mt-0.5 size-4 shrink-0 text-[#7f92ff]" aria-hidden="true" />
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-auto pt-7">
+                  {solution.cta === "contact" ? (
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      className="rounded-full border-white/25 bg-transparent px-4 text-[#f4f4f2] hover:bg-white/10 dark:border-white/25 dark:bg-transparent dark:hover:bg-white/10"
+                      render={<Link href="/contact" />}
+                    >
+                      Contact us
+                      <ArrowUpRight className="size-3.5" />
+                    </Button>
+                  ) : (
+                    <span className="inline-flex items-center gap-2 rounded-full border border-white/12 px-4 py-2 text-xs font-medium tracking-wide text-white/45">
+                      <span className="size-1.5 rounded-full bg-[#7f92ff]/70" aria-hidden="true" />
+                      Coming soon
+                    </span>
+                  )}
+                </div>
               </div>
             </Reveal>
           ))}
         </div>
       </Section>
 
-      <Section tone="charcoal">
-        <div className="grid gap-12 lg:grid-cols-2 lg:items-start lg:gap-16">
-          <Reveal>
-            <h2 className="text-2xl font-semibold sm:text-3xl">
-              Marketing and SEO, as guidance
-            </h2>
-            <p className="mt-4 max-w-xl text-base leading-relaxed text-charcoal-foreground/75">
-              We&apos;re not pitching you a heavy retainer. Alongside social, we help
-              members and clients with practical marketing advice, visibility audits,
-              basic on-page SEO, and Google Business Profile support, the kind of
-              journey shown here. Guidance and support first; if you need more, we&apos;ll
-              say so honestly.
-            </p>
-            <p className="mt-4 max-w-xl text-base leading-relaxed text-charcoal-foreground/75">
-              The free Content Audit is the usual starting point. We review how your
-              business comes across on social, then talk it through with you.
-            </p>
-          </Reveal>
-          <Reveal delay={0.1} className="flex justify-center lg:justify-end">
-            <MapTransformation onDark />
-          </Reveal>
-        </div>
-      </Section>
-
       <Section tone="light" containerClassName="text-center">
         <Reveal>
           <h2 className="text-2xl font-semibold sm:text-3xl">
-            Want this handled for your business?
+            Not sure which one fits?
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-base leading-relaxed text-muted-foreground">
-            Members get first priority on services. Start there, or just get in touch.
+            Tell us the task that keeps stalling. We&apos;ll tell you honestly whether an
+            agent team can do it, and where a human still has to.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <Button size="lg" variant="warm" render={<Link href={primaryCta.href} />}>
+            <Button
+              size="lg"
+              variant="warm"
+              className="rounded-full px-5"
+              render={<Link href={primaryCta.href} />}
+            >
               {primaryCta.label}
-              <ArrowRight className="size-4" />
+              <ArrowUpRight className="size-4" />
             </Button>
-            <Button size="lg" variant="outline" render={<Link href="/contact" />}>
-              Contact Us
+            <Button size="lg" variant="outline" render={<Link href="/faq" />}>
+              Read the FAQ
             </Button>
           </div>
         </Reveal>

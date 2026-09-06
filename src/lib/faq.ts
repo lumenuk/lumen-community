@@ -7,47 +7,42 @@ export const faqItems: FaqEntry[] = [
   {
     question: "What is Lumen Growth?",
     answer:
-      "Lumen Growth is a London business community with a social media services arm. Members get social media support, marketing guidance, and access to a network of partners and people who can help when it matters.",
+      "Lumen Growth is an AI agency for UK businesses. We build and steer teams of AI agents that recover leads, work together, and answer the phone. Each system is scoped against a call and the data you already hold, then steered by us — not handed over and forgotten.",
   },
   {
-    question: "What is the Lumen Community?",
+    question: "What is Scout?",
     answer:
-      "The Lumen Community is our growing network of London business owners. It comes with structure: monthly check-in support, member-to-member introductions, partner deals and perks, and a shared space to grow alongside other owners.",
+      "Scout is our core product: a team of AI agents that research, verify, negotiate and report back, handing work to each other instead of stalling on one assistant. It's built to be tailored — a sourcing desk for an importer, a diligence team for an agency, a research crew for anyone with a recurring decision to make.",
   },
   {
-    question: "Who is the community for?",
+    question: "What jobs can AI actually replace?",
     answer:
-      "London business owners who want people in their corner. If you run a business and you'd rather grow alongside others than figure everything out alone, it's built for you. Apply through the contact page and we'll have an honest conversation about fit.",
+      "Chasing dormant leads, qualifying enquiries, answering calls out of hours, drafting replies to routine questions, and writing up what happened. Not pricing, not anything that commits you to something binding — those wait for a human.",
   },
   {
-    question: "What do members get?",
+    question: "What stays with a person?",
     answer:
-      "One-to-one check-ins with us, monthly or quarterly, plus a call whenever something urgent comes up. A members' group chat for quick asks and introductions. In-person London meetups and events. LinkedIn networking alongside the community, partner perks negotiated for the group, and priority on our social media services.",
+      "Anything irreversible: quotes, discounts, capacity promises, and any reply the system reads as off-script. It drafts, you approve.",
   },
   {
-    question: "How much does membership cost?",
+    question: "Do I need a new CRM?",
     answer:
-      "Your first week is free, so you can see if it's for you before paying anything. After that there's a monthly membership fee, which we talk through on your application call rather than publishing figures. Founder members join with no tie-in.",
+      "No. Every system reads and writes to the data you already hold — there is no migration.",
   },
   {
-    question: "Do you offer social media management?",
+    question: "How fast does it start working?",
     answer:
-      "Yes. Content creation, day-to-day account management, strategy, and growth across Instagram, Facebook, and LinkedIn. We take on a limited number of businesses at a time, and members come first — but you don't have to join the community to work with us. We also offer general marketing and SEO guidance: advice, basic on-page SEO, and Google Business Profile support.",
+      "Usually days for the first system, because it is scoped against a call and your existing data, not built from a blank brief.",
   },
   {
-    question: "How do I apply to join?",
+    question: "What if it gets something wrong?",
     answer:
-      "Use the membership form on the contact page. Tell us about your business and what you're hoping to get from the community, and we'll be in touch to talk it through. No obligation.",
+      "A critic agent reviews recommendations before they reach you, and anything sent to a real customer or spent as money is held for your approval first.",
   },
   {
-    question: "How do I request a Content Audit?",
+    question: "How much does it cost?",
     answer:
-      "Use the Content Audit form on the contact page (there's a button for it on the homepage too). It takes a couple of minutes, and it's free.",
-  },
-  {
-    question: "What is a Content Audit?",
-    answer:
-      "A free review of how your business comes across on social media: your profiles, your content, how often you post, and how professional it all looks next to businesses like yours. We look at what's working and what's missing, then call you to talk through what we found. No automated report, no hard sell.",
+      "We scope each system against a call and shape the price around your business, so we don't publish figures. We scope on hours saved and enquiries handled, not revenue promises — because we're new and we'd rather be honest than sell you a number we can't stand behind.",
   },
   {
     question: "What happens to our business information?",

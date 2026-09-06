@@ -1,7 +1,7 @@
 import { siteConfig, socialLinks } from "@/lib/site-config";
 
 /* LocalBusiness schema for Google's local pack / knowledge panel eligibility.
-   No street address exists (membership community, not a shopfront), so only
+   No street address exists (a remote AI agency, not a shopfront), so only
    locality-level address is given — schema.org allows this. */
 export function OrganizationJsonLd() {
   const jsonLd = {

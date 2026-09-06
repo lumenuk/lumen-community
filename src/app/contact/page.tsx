@@ -6,9 +6,9 @@ import { ContactForms, type ContactFormKind } from "@/components/forms/contact-f
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: "Contact",
+  title: "Book a call",
   description:
-    "Apply to join the Lumen Community or request a free Content Audit. No obligation, no hard sell.",
+    "Book a call with Lumen Growth, or request a free AI audit of your business. No obligation, no hard sell.",
   alternates: { canonical: "/contact" },
 };
 
@@ -25,8 +25,8 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
       <div className="grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:gap-16">
         <div>
           <PageIntro
-            title="Get in touch"
-            description="Apply to join the community, or request a free Content Audit of your social media presence and content. Either way: no obligation, no hard sell."
+            title="Book a call"
+            description="Twenty minutes. Tell us the decision you keep putting off, or the work that keeps stalling, and we'll tell you honestly whether an agent team can do it. Prefer we look first? Request a free AI audit instead."
           />
           <Reveal delay={0.1}>
             <div className="mt-8 space-y-4 text-sm leading-relaxed text-muted-foreground">

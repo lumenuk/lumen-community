@@ -11,7 +11,8 @@ export function Footer() {
           <div className="max-w-sm">
             <LumenLogo />
             <p className="mt-4 text-sm leading-relaxed text-charcoal-foreground/70">
-              A London business community with social media support built in.
+              An AI agency for UK businesses. We build and steer agent teams that
+              recover leads, work together, and answer the phone.
             </p>
             <div className="mt-6 flex gap-3">
               {socialLinks.map((social) => {

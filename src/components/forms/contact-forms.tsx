@@ -134,7 +134,7 @@ function MembershipForm() {
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="m-hopingFor">What are you hoping to get from the community?</Label>
+        <Label htmlFor="m-hopingFor">What would you hand to an agent team first?</Label>
         <Textarea id="m-hopingFor" name="hopingFor" required maxLength={1200} />
         <FieldError message={errors.hopingFor} />
       </div>
@@ -142,7 +142,7 @@ function MembershipForm() {
       <ConsentField error={errors.consent} />
 
       <Button type="submit" size="lg" variant="warm" disabled={isPending} className="w-full sm:w-auto">
-        {isPending ? "Submitting..." : "Apply to Join the Community"}
+        {isPending ? "Submitting..." : "Book a call"}
       </Button>
     </form>
   );
@@ -217,7 +217,7 @@ function AuditForm() {
           id="a-wantMore"
           name="wantMore"
           type="text"
-          placeholder="e.g. enquiries, bookings, visibility, social presence"
+          placeholder="e.g. recover old leads, answer calls out of hours, qualify enquiries"
           required
           maxLength={300}
         />
@@ -227,7 +227,7 @@ function AuditForm() {
       <ConsentField error={errors.consent} />
 
       <Button type="submit" size="lg" variant="warm" disabled={isPending} className="w-full sm:w-auto">
-        {isPending ? "Submitting..." : "Request a Free Content Audit"}
+        {isPending ? "Submitting..." : "Request a free AI audit"}
       </Button>
     </form>
   );
@@ -255,7 +255,7 @@ export function ContactForms({ initialKind = "membership" }: { initialKind?: Con
               : "border-border text-muted-foreground hover:border-foreground hover:text-foreground"
           )}
         >
-          Apply to Join the Community
+          Book a call
         </button>
         <button
           type="button"
@@ -269,7 +269,7 @@ export function ContactForms({ initialKind = "membership" }: { initialKind?: Con
               : "border-border text-muted-foreground hover:border-foreground hover:text-foreground"
           )}
         >
-          Request a Free Content Audit
+          Free AI audit
         </button>
       </div>
       <div className="mt-8">{kind === "membership" ? <MembershipForm /> : <AuditForm />}</div>

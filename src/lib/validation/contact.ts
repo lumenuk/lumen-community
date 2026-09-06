@@ -45,7 +45,7 @@ export const membershipSchema = z.object({
   hopingFor: z
     .string()
     .trim()
-    .min(10, "Tell us what you're hoping to get from the community.")
+    .min(10, "Tell us what you'd like to hand to an agent team.")
     .max(1200),
   consent,
   company: honeypot,

@@ -24,20 +24,20 @@ export default function TermsPage() {
         <div>
           <h2 className="text-lg font-semibold text-foreground">About this website</h2>
           <p className="mt-2">
-            This website is operated by Lumen Growth, a London business community and
-            social media services provider. These terms cover your use of this website
-            only. They don&apos;t cover community membership terms or any services
-            agreement, which are set out separately once we agree to work together.
+            This website is operated by Lumen Growth, a UK-based AI agency that builds and
+            steers AI systems for businesses. These terms cover your use of this website
+            only. They don&apos;t cover any services agreement, which is set out separately
+            once we agree to work together.
           </p>
         </div>
 
         <div>
           <h2 className="text-lg font-semibold text-foreground">Using this website</h2>
           <p className="mt-2">
-            You may browse this website, apply to join the community, subscribe to the
-            newsletter, and submit a Content Audit request for genuine business enquiries. You agree not to submit false information, attempt to
-            disrupt the site, or use any content on it for purposes other than evaluating
-            our services.
+            You may browse this website, book a call, and submit an AI audit request for
+            genuine business enquiries. You agree not to submit false information, attempt
+            to disrupt the site, or use any content on it for purposes other than
+            evaluating our services.
           </p>
         </div>
 

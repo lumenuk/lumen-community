@@ -8,7 +8,7 @@ import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { Button } from "@/components/ui/button";
 import { LumenLogo } from "@/components/layout/logo";
 import { cn } from "@/lib/utils";
-import { mainNav, primaryCta } from "@/lib/site-config";
+import { mainNav, primaryCta, signInCta } from "@/lib/site-config";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -42,10 +42,21 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="hidden md:block">
-          <Button size="sm" variant="warm" render={<Link href={primaryCta.href} />}>
+        <div className="hidden items-center gap-5 md:flex">
+          <Button
+            size="sm"
+            variant="warm"
+            className="rounded-full px-5"
+            render={<Link href={primaryCta.href} />}
+          >
             {primaryCta.label}
           </Button>
+          <Link
+            href={signInCta.href}
+            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+          >
+            {signInCta.label}
+          </Link>
         </div>
 
         <button
@@ -90,6 +101,13 @@ export function Header() {
               >
                 {primaryCta.label}
               </Button>
+              <Link
+                href={signInCta.href}
+                onClick={() => setIsMenuOpen(false)}
+                className="mt-1 rounded-md px-2 py-2.5 text-sm font-medium text-muted-foreground"
+              >
+                {signInCta.label}
+              </Link>
             </div>
           </motion.nav>
         ) : null}

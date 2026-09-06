@@ -5,8 +5,8 @@ export const alt = siteConfig.name;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-/* Colors approximate the brand oklch tokens from globals.css (warm gold
-   accent, warm charcoal foreground) since Satori doesn't support oklch(). */
+/* Dark AI-agency brand: near-black background, electric-blue accent, light
+   wordmark — mirroring the site's globals.css palette. */
 export default function Image() {
   return new ImageResponse(
     (
@@ -18,14 +18,14 @@ export default function Image() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          background: "#FAF6EF",
+          background: "#0A0A0B",
           padding: 80,
         }}
       >
         <svg viewBox="0 0 440 270" width="120" height="74">
           <g
             fill="none"
-            stroke="#A6763D"
+            stroke="#3E5CFF"
             strokeWidth="16"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -44,14 +44,14 @@ export default function Image() {
             <line x1="268" y1="96" x2="282" y2="48" />
             <line x1="321" y1="164" x2="360" y2="140" />
           </g>
-          <circle cx="220" cy="226" r="25" fill="#A6763D" />
+          <circle cx="220" cy="226" r="25" fill="#3E5CFF" />
         </svg>
         <div
           style={{
             marginTop: 32,
             fontSize: 64,
             fontWeight: 700,
-            color: "#2E2A26",
+            color: "#F4F4F2",
             letterSpacing: -1,
           }}
         >
@@ -61,7 +61,7 @@ export default function Image() {
           style={{
             marginTop: 20,
             fontSize: 30,
-            color: "#5C554C",
+            color: "#B4B4B0",
             textAlign: "center",
             maxWidth: 820,
           }}

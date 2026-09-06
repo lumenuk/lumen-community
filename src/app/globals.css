@@ -52,91 +52,56 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-:root {
-  /* Warm-tinted neutrals (hue 55) instead of cold pure-grey neutrals. */
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.19 0.006 55);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.19 0.006 55);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.19 0.006 55);
-  --primary: oklch(0.19 0.006 55);
-  --primary-foreground: oklch(0.98 0.003 55);
-  --secondary: oklch(0.96 0.004 55);
-  --secondary-foreground: oklch(0.19 0.006 55);
-  --muted: oklch(0.96 0.004 55);
-  --muted-foreground: oklch(0.48 0.008 55);
-  --accent: oklch(0.96 0.004 55);
-  --accent-foreground: oklch(0.19 0.006 55);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.9 0.005 55);
-  --input: oklch(0.9 0.005 55);
-  --ring: oklch(0.55 0.11 75);
-  --chart-1: oklch(0.87 0.02 55);
-  --chart-2: oklch(0.556 0.02 55);
-  --chart-3: oklch(0.439 0.02 55);
-  --chart-4: oklch(0.371 0.02 55);
-  --chart-5: oklch(0.269 0.02 55);
-  --radius: 0.5rem;
-  --sidebar: oklch(0.98 0.003 55);
-  --sidebar-foreground: oklch(0.19 0.006 55);
-  --sidebar-primary: oklch(0.19 0.006 55);
-  --sidebar-primary-foreground: oklch(0.98 0.003 55);
-  --sidebar-accent: oklch(0.96 0.004 55);
-  --sidebar-accent-foreground: oklch(0.19 0.006 55);
-  --sidebar-border: oklch(0.9 0.005 55);
-  --sidebar-ring: oklch(0.55 0.11 75);
-
-  /* Lumen Growth brand tokens: charcoal (dark sections) + single warm accent.
-     The accent is a warm gold (owner-confirmed, anchored to the animation
-     handoff's #E0A93E family). Gold is too light for white text, so fills use
-     charcoal text (--warm-foreground); for small text ON white, use the darker
-     --warm-deep stop of the same hue to keep AA contrast. */
-  --charcoal: oklch(0.17 0.008 55);
-  --charcoal-foreground: oklch(0.96 0.004 65);
-  --warm: oklch(0.76 0.13 80);
-  --warm-foreground: oklch(0.19 0.006 55);
-  --warm-deep: oklch(0.55 0.11 75);
-}
-
+/* Lumen Growth AI-agency theme (owner redesign, Sept 2026): dark UI with a
+   single electric-blue accent. The site is dark by default — the same palette
+   is set on :root and .dark, and <html> carries the `dark` class so component
+   `dark:` variants resolve correctly. Light bands (evidence, book-a-call) are
+   built explicitly on the homepage rather than via tokens. */
+:root,
 .dark {
-  --background: oklch(0.17 0.008 55);
-  --foreground: oklch(0.96 0.004 65);
-  --card: oklch(0.22 0.008 55);
-  --card-foreground: oklch(0.96 0.004 65);
-  --popover: oklch(0.22 0.008 55);
-  --popover-foreground: oklch(0.96 0.004 65);
-  --primary: oklch(0.94 0.004 55);
-  --primary-foreground: oklch(0.17 0.008 55);
-  --secondary: oklch(0.27 0.008 55);
-  --secondary-foreground: oklch(0.96 0.004 65);
-  --muted: oklch(0.27 0.008 55);
-  --muted-foreground: oklch(0.72 0.008 55);
-  --accent: oklch(0.27 0.008 55);
-  --accent-foreground: oklch(0.96 0.004 65);
+  --background: #0a0a0b;
+  --foreground: #f4f4f2;
+  --card: #131316;
+  --card-foreground: #f4f4f2;
+  --popover: #131316;
+  --popover-foreground: #f4f4f2;
+  --primary: #2f3ee0;
+  --primary-foreground: #ffffff;
+  --secondary: #1a1a1e;
+  --secondary-foreground: #f4f4f2;
+  --muted: #131316;
+  --muted-foreground: #b4b4b0;
+  --accent: #2f3ee0;
+  --accent-foreground: #ffffff;
   --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.76 0.13 80);
-  --chart-1: oklch(0.87 0.02 55);
-  --chart-2: oklch(0.556 0.02 55);
-  --chart-3: oklch(0.439 0.02 55);
-  --chart-4: oklch(0.371 0.02 55);
-  --chart-5: oklch(0.269 0.02 55);
-  --sidebar: oklch(0.2 0.008 55);
-  --sidebar-foreground: oklch(0.96 0.004 65);
-  --sidebar-primary: oklch(0.76 0.13 80);
-  --sidebar-primary-foreground: oklch(0.19 0.006 55);
-  --sidebar-accent: oklch(0.27 0.008 55);
-  --sidebar-accent-foreground: oklch(0.96 0.004 65);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.76 0.13 80);
+  --border: #232327;
+  --input: #26262a;
+  --ring: #3e5cff;
+  --chart-1: #2f3ee0;
+  --chart-2: #3e5cff;
+  --chart-3: #7f92ff;
+  --chart-4: #c9d3ff;
+  --chart-5: #9aa6ff;
+  --radius: 0.5rem;
+  --sidebar: #131316;
+  --sidebar-foreground: #f4f4f2;
+  --sidebar-primary: #2f3ee0;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #1a1a1e;
+  --sidebar-accent-foreground: #f4f4f2;
+  --sidebar-border: #232327;
+  --sidebar-ring: #3e5cff;
 
-  --charcoal: oklch(0.12 0.006 55);
-  --charcoal-foreground: oklch(0.96 0.004 65);
-  --warm: oklch(0.76 0.13 80);
-  --warm-foreground: oklch(0.19 0.006 55);
-  --warm-deep: oklch(0.76 0.13 80);
+  /* Brand section/accent tokens, kept by name to avoid churn across existing
+     components. `charcoal` = the dark surface used for panels/sections;
+     `warm` is repurposed as the light-blue primary CTA (dark text on it),
+     matching the "BOOK A CALL" pill; `warm-deep` is the blue used for accent
+     text and links on light backgrounds. */
+  --charcoal: #131316;
+  --charcoal-foreground: #f4f4f2;
+  --warm: #c9d3ff;
+  --warm-foreground: #0a0a0b;
+  --warm-deep: #2f3ee0;
 }
 
 @layer base {

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Archivo, Inter } from "next/font/google";
+import { Archivo, Poppins } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Header } from "@/components/layout/header";
@@ -9,7 +9,11 @@ import { SiteAnalytics } from "@/components/layout/analytics";
 import { OrganizationJsonLd } from "@/components/layout/json-ld";
 import { siteConfig } from "@/lib/site-config";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-sans",
+});
 const archivo = Archivo({ subsets: ["latin"], variable: "--font-heading" });
 
 export const metadata: Metadata = {
@@ -35,7 +39,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn("h-full antialiased", inter.variable, archivo.variable)}>
+    <html lang="en" className={cn("dark h-full antialiased", poppins.variable, archivo.variable)}>
       <body className="flex min-h-full flex-col bg-background font-sans text-foreground">
         <OrganizationJsonLd />
         <Header />

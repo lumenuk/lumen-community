@@ -12,7 +12,7 @@ import { faqItems } from "@/lib/faq";
 export const metadata: Metadata = {
   title: "FAQ",
   description:
-    "Answers to common questions about Lumen Growth, the Lumen Community, membership, social media services, and the free Content Audit.",
+    "Answers to common questions about Lumen Growth, Scout agent teams, what AI can and can't replace, data, and how our systems get started.",
   alternates: { canonical: "/faq" },
 };
 
@@ -23,7 +23,7 @@ export default function FaqPage() {
       <Section tone="light">
         <PageIntro
           title="Frequently asked questions"
-          description="Straightforward answers about the community, our services, and how to get started."
+          description="Straightforward answers about what we build, what AI can and can't take on, and how our systems get started."
         />
       </Section>
 

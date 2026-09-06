@@ -1,13 +1,10 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/lib/site-config";
-import { getAllPosts } from "@/lib/blog";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = [
+  return [
     "",
-    "/community",
     "/services",
-    "/blog",
     "/contact",
     "/faq",
     "/privacy-policy",
@@ -16,11 +13,4 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${siteConfig.url}${route}`,
     lastModified: new Date(),
   }));
-
-  const postRoutes = getAllPosts().map((post) => ({
-    url: `${siteConfig.url}/blog/${post.slug}`,
-    lastModified: new Date(post.publishedAt),
-  }));
-
-  return [...staticRoutes, ...postRoutes];
 }
