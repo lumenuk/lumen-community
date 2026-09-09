@@ -4,7 +4,7 @@ export const siteConfig = {
   description:
     "Lumen Growth is an AI agency for UK businesses. We build and steer teams of AI agents that recover leads, work together, and answer the phone — so the work that used to stall gets done.",
   url: "https://www.lumengrowth.co.uk",
-  contactEmail: "info@lumengrowth.co.uk",
+  contactEmail: "lumen.solutions.management@gmail.com",
   locationLabel: "London, UK",
 };
 
