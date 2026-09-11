@@ -16,6 +16,11 @@ const poppins = Poppins({
 });
 const archivo = Archivo({ subsets: ["latin"], variable: "--font-heading" });
 
+/* Runs before paint so there's no flash of the wrong theme: honour the visitor's
+   saved choice, otherwise default to dark (the brand default). CSP already allows
+   'unsafe-inline' scripts, so no nonce is required. */
+const themeInit = `(function(){try{var s=localStorage.getItem("theme");var d=s?s==="dark":true;var e=document.documentElement;e.classList.toggle("dark",d);e.style.colorScheme=d?"dark":"light";}catch(e){}})();`;
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
@@ -39,7 +44,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn("dark h-full antialiased", poppins.variable, archivo.variable)}>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={cn("h-full antialiased", poppins.variable, archivo.variable)}
+    >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInit }} />
+      </head>
       <body className="flex min-h-full flex-col bg-background font-sans text-foreground">
         <OrganizationJsonLd />
         <Header />

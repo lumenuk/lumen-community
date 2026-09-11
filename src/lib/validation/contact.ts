@@ -80,6 +80,7 @@ export const auditSchema = z.object({
 
 export const newsletterSchema = z.object({
   email,
+  consent,
   company: honeypot,
 });
 

@@ -34,7 +34,7 @@ export function ScoutVideo() {
           aria-label="Play the Scout product walkthrough"
           className="group absolute inset-0 flex flex-col items-center justify-center gap-4 bg-black/30 transition-colors hover:bg-black/20"
         >
-          <span className="grid size-[72px] place-items-center rounded-full border border-[#7f92ff] bg-[#0d0d0f]/60 text-[#7f92ff] transition-transform group-hover:scale-105">
+          <span className="grid size-[72px] place-items-center rounded-full border border-accent-ink bg-[#0d0d0f]/60 text-accent-ink transition-transform group-hover:scale-105">
             <Play className="size-6 translate-x-0.5 fill-current" />
           </span>
           <span className="font-sans text-xs tracking-[0.12em] text-white/70">

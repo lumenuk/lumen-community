@@ -11,6 +11,7 @@ export const siteConfig = {
 export const mainNav = [
   { label: "Solutions", href: "/services" },
   { label: "Evidence", href: "/#evidence" },
+  { label: "Insights", href: "/insights" },
   { label: "FAQ", href: "/faq" },
 ] as const;
 
@@ -18,6 +19,7 @@ export const footerNav = {
   explore: [
     { label: "Solutions", href: "/services" },
     { label: "Evidence", href: "/#evidence" },
+    { label: "Insights", href: "/insights" },
     { label: "FAQ", href: "/faq" },
     { label: "Book a call", href: "/contact" },
   ],
@@ -46,7 +48,19 @@ export const signInCta = {
   href: "/sign-in",
 };
 
-/* Facebook and LinkedIn pending — add once those profiles exist. */
+/* Social profiles surfaced in the footer and on the Insights page.
+   Only Instagram is live. LinkedIn and Facebook stay out until those profiles
+   exist — add an entry here and their icon/handle appears automatically. */
 export const socialLinks = [
-  { name: "Instagram", href: "https://www.instagram.com/lumengrowth.uk/" },
+  {
+    name: "Instagram",
+    href: "https://www.instagram.com/lumengrowth.uk/",
+    handle: "@lumengrowth.uk",
+  },
 ] as const;
+
+/* The blog/newsletter lives at /insights and is also served at the connected
+   subdomain below (see src/proxy.ts, which rewrites this host onto /insights).
+   `insightsUrl` is the canonical public address shown to visitors. */
+export const insightsHost = "insights.lumengrowth.co.uk";
+export const insightsUrl = `https://${insightsHost}`;

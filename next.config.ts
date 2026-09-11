@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import createMDX from "@next/mdx";
 
 const isDev = process.env.NODE_ENV === "development";
 
@@ -19,6 +20,9 @@ const contentSecurityPolicy = [
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  /* Insights posts are authored as .mdx files under src/content/insights and
+     imported (not file-routed), so pageExtensions is intentionally left at its
+     default — only the @next/mdx loader (below) needs registering. */
   async redirects() {
     /* Agency-era routes retired in the community repositioning (July 2026). */
     return [
@@ -47,4 +51,6 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+const withMDX = createMDX({});
+
+export default withMDX(nextConfig);

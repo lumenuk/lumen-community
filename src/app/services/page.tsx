@@ -68,7 +68,7 @@ export default function SolutionsPage() {
           {solutions.map((solution, index) => (
             <Reveal key={solution.name} delay={(index % 3) * 0.06}>
               <div className="flex h-full flex-col border-t border-white/15 pt-5">
-                <p className="text-[11px] font-medium tracking-[0.14em] text-[#7f92ff]">
+                <p className="text-[11px] font-medium tracking-[0.14em] text-accent-ink">
                   {solution.kicker}
                 </p>
                 <h2 className="mt-3 text-2xl font-semibold">{solution.name}</h2>
@@ -81,7 +81,7 @@ export default function SolutionsPage() {
                       key={point}
                       className="flex gap-3 text-sm leading-relaxed text-charcoal-foreground/85"
                     >
-                      <Check className="mt-0.5 size-4 shrink-0 text-[#7f92ff]" aria-hidden="true" />
+                      <Check className="mt-0.5 size-4 shrink-0 text-accent-ink" aria-hidden="true" />
                       {point}
                     </li>
                   ))}
@@ -99,7 +99,7 @@ export default function SolutionsPage() {
                     </Button>
                   ) : (
                     <span className="inline-flex items-center gap-2 rounded-full border border-white/12 px-4 py-2 text-xs font-medium tracking-wide text-white/45">
-                      <span className="size-1.5 rounded-full bg-[#7f92ff]/70" aria-hidden="true" />
+                      <span className="size-1.5 rounded-full bg-accent-ink/70" aria-hidden="true" />
                       Coming soon
                     </span>
                   )}

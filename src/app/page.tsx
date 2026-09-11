@@ -72,17 +72,20 @@ const faqs = [
 export default function HomePage() {
   return (
     <div>
-      {/* 1 — Hero: live headline over the owner's blue halftone visual */}
-      <header className="relative overflow-hidden bg-[#050506] text-[#f4f4f2]">
+      {/* 1 — Hero: live headline over the owner's blue halftone visual. Base and
+          overlays are theme-aware (see --hero-* in globals.css): a near-black
+          field with a blue glow in dark mode, a white field with a soft blue
+          wash in light mode. */}
+      <header
+        className="relative overflow-hidden text-foreground"
+        style={{ backgroundColor: "var(--hero-base)" }}
+      >
         {/* Blue glow — smooth radial wash anchored to the right (resolution
             independent, no upscaled bitmap). */}
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(125% 115% at 112% 52%, #7d90ff 0%, #4358f2 16%, #2333c9 30%, #16206e 44%, #0a1038 56%, rgba(5,5,6,0) 70%)",
-          }}
+          style={{ background: "var(--hero-glow)" }}
         />
         {/* Fine halftone dot texture, masked to the glow so dots brighten into
             the blue and fade out toward the headline. Crisp at any size. */}
@@ -91,7 +94,7 @@ export default function HomePage() {
           className="pointer-events-none absolute inset-0"
           style={{
             backgroundImage:
-              "radial-gradient(circle at center, rgba(210,222,255,0.9) 0.85px, transparent 1.7px)",
+              "radial-gradient(circle at center, var(--hero-dots) 0.85px, transparent 1.7px)",
             backgroundSize: "6px 6px",
             mixBlendMode: "overlay",
             opacity: 0.55,
@@ -101,40 +104,31 @@ export default function HomePage() {
               "radial-gradient(120% 110% at 112% 52%, #000 0%, #000 40%, transparent 66%)",
           }}
         />
-        {/* Left-side darkening keeps the headline legible over the glow. */}
+        {/* Left-side fade keeps the headline legible over the glow. */}
         <div
           aria-hidden="true"
           className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(90deg, #050506 0%, #050506 20%, rgba(5,5,6,0.6) 42%, rgba(5,5,6,0) 60%)",
-          }}
+          style={{ background: "var(--hero-fade-left)" }}
         />
         {/* Subtle top vignette for depth. */}
         <div
           aria-hidden="true"
           className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(180deg, rgba(5,5,6,0.5) 0%, rgba(5,5,6,0) 22%)",
-          }}
+          style={{ background: "var(--hero-fade-top)" }}
         />
-        {/* Blend the bottom of the hero into the next section (#131316) so
-            there's no hard seam between them. */}
+        {/* Blend the bottom of the hero into the next section so there's no
+            hard seam between them. */}
         <div
           aria-hidden="true"
           className="absolute inset-x-0 bottom-0 h-56"
-          style={{
-            background:
-              "linear-gradient(180deg, rgba(19,19,22,0) 0%, rgba(19,19,22,0.6) 55%, #131316 100%)",
-          }}
+          style={{ background: "var(--hero-fade-bottom)" }}
         />
         <div className="relative mx-auto flex min-h-[560px] max-w-6xl flex-col justify-center px-6 py-24 lg:min-h-[620px]">
           <Reveal className="max-w-2xl">
             <h1 className="font-heading text-5xl font-medium tracking-tight text-balance uppercase sm:text-6xl lg:text-7xl">
               Systems that run your business
             </h1>
-            <p className="mt-8 max-w-md text-base leading-relaxed text-[#b4b4b0]">
+            <p className="mt-8 max-w-md text-base leading-relaxed text-muted-foreground">
               Built and steered by us. Deploy agents that recover leads, work in
               teams, and answer the phone.
             </p>
@@ -151,7 +145,7 @@ export default function HomePage() {
               <Button
                 size="lg"
                 variant="outline"
-                className="rounded-full border-white/25 bg-transparent px-5 text-[#f4f4f2] hover:bg-white/10 dark:border-white/25 dark:bg-transparent dark:hover:bg-white/10"
+                className="rounded-full border-foreground/25 bg-transparent px-5 text-foreground hover:bg-foreground/10"
                 render={<Link href={secondaryCta.href} />}
               >
                 Explore Scout
@@ -161,15 +155,16 @@ export default function HomePage() {
         </div>
       </header>
 
-      {/* 2 — Meet Scout + product walkthrough video */}
-      <section className="bg-[#131316] text-[#f4f4f2]">
+      {/* 2 — Meet Scout: flows with the theme (white in light, near-black in
+          dark), continuing the hero — the alternation starts after this. */}
+      <section className="bg-background text-foreground">
         <div className="mx-auto grid max-w-6xl gap-12 px-6 py-20 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:gap-16 lg:py-24">
           <Reveal>
-            <p className="text-xs font-medium tracking-[0.12em] text-[#7f92ff]">
+            <p className="text-xs font-medium tracking-[0.12em] text-accent-ink">
               AI AGENT TEAMS
             </p>
             <h2 className="mt-5 text-4xl font-semibold tracking-tight">Meet Scout.</h2>
-            <p className="mt-5 text-base leading-relaxed text-[#b4b4b0]">
+            <p className="mt-5 text-base leading-relaxed text-muted-foreground">
               Scout is a team of AI agents that research, verify, negotiate and report
               back — handing work to each other instead of stalling on one assistant.
               It is built to be tailored: a sourcing desk for an importer, a diligence
@@ -183,17 +178,22 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 3 — Evidence: light band, government statistics */}
-      <section id="evidence" className="scroll-mt-16 bg-[#f2f2f0] text-[#0a0a0b]">
+      {/* 3 — Evidence: an inverse band (black in light mode, white in dark) so the
+          homepage alternates. Content uses tokens, which the .section-invert scope
+          flips per mode. */}
+      <section
+        id="evidence"
+        className="section-invert scroll-mt-16 bg-background text-foreground"
+      >
         <div className="mx-auto max-w-5xl px-6 py-24 text-center">
           <Reveal>
-            <p className="text-[11px] font-medium tracking-[0.14em] text-[#2f3ee0]">
+            <p className="text-[11px] font-medium tracking-[0.14em] text-accent-ink">
               EVIDENCE
             </p>
             <h2 className="mt-4 font-heading text-3xl font-medium tracking-tight sm:text-4xl">
               Don&apos;t trust us. Trust them.
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-balance text-[#33332f]">
+            <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-balance text-muted-foreground">
               We are new, so we will not show you client numbers we cannot stand
               behind. Here is what the government&apos;s own statisticians and
               researchers published instead — including the figure that argues against
@@ -206,30 +206,31 @@ export default function HomePage() {
               <Reveal
                 key={s.figure}
                 delay={(i % 2) * 0.06}
-                className="grid grid-cols-1 gap-3 border-t border-[#d8d8d4] py-6 sm:grid-cols-[200px_minmax(0,1fr)] sm:gap-7 sm:py-7"
+                className="grid grid-cols-1 gap-3 border-t border-border py-6 sm:grid-cols-[200px_minmax(0,1fr)] sm:gap-7 sm:py-7"
               >
                 <div
-                  className="font-heading text-4xl leading-none font-medium tracking-tight sm:text-5xl"
-                  style={{ color: s.accent ? "#2f3ee0" : "#0a0a0b" }}
+                  className={`font-heading text-4xl leading-none font-medium tracking-tight sm:text-5xl ${
+                    s.accent ? "text-accent-ink" : "text-foreground"
+                  }`}
                 >
                   {s.figure}
                 </div>
                 <div>
-                  <p className="text-base leading-relaxed text-[#33332f]">{s.text}</p>
-                  <p className="mt-2 text-[11px] tracking-wide text-[#5a5a54]">
+                  <p className="text-base leading-relaxed text-muted-foreground">{s.text}</p>
+                  <p className="mt-2 text-[11px] tracking-wide text-muted-foreground">
                     {s.source}
                   </p>
                 </div>
               </Reveal>
             ))}
-            <div className="border-t border-[#d8d8d4]" />
+            <div className="border-t border-border" />
           </div>
 
-          <p className="mt-6 text-[11px] leading-relaxed text-[#5a5a54]">
+          <p className="mt-6 text-[11px] leading-relaxed text-muted-foreground">
             ONS,{" "}
             <a
               href="https://www.ons.gov.uk/businessindustryandtrade/business/businessservices/articles/artificialintelligenceinukbusinesses/2023to2026"
-              className="text-[#2f3ee0] underline-offset-2 hover:underline"
+              className="text-accent-ink underline-offset-2 hover:underline"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -238,7 +239,7 @@ export default function HomePage() {
             · DSIT,{" "}
             <a
               href="https://www.gov.uk/government/publications/ai-adoption-research"
-              className="text-[#2f3ee0] underline-offset-2 hover:underline"
+              className="text-accent-ink underline-offset-2 hover:underline"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -250,10 +251,10 @@ export default function HomePage() {
       </section>
 
       {/* 4 — FAQ */}
-      <section id="faq" className="scroll-mt-16 bg-[#131316] text-[#f4f4f2]">
+      <section id="faq" className="scroll-mt-16 bg-background text-foreground">
         <div className="mx-auto max-w-4xl px-6 py-24">
           <Reveal>
-            <p className="text-[11px] font-medium tracking-[0.14em] text-[#2f3ee0]">
+            <p className="text-[11px] font-medium tracking-[0.14em] text-accent-ink">
               FAQ
             </p>
             <h2 className="mt-4 max-w-xl font-heading text-3xl font-medium tracking-tight sm:text-4xl">
