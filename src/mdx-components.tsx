@@ -77,7 +77,7 @@ const components: MDXComponents = {
   blockquote: ({ className, ...props }) => (
     <blockquote
       className={cn(
-        "my-8 border-l-2 border-[#2f3ee0] pl-5 text-lg leading-relaxed text-foreground/90 italic",
+        "my-8 border-l-2 border-[#3B3BD9] pl-5 text-lg leading-relaxed text-foreground/90 italic",
         className
       )}
       {...props}

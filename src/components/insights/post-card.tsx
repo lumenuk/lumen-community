@@ -36,16 +36,29 @@ export function PostCard({ post }: { post: PostSummary }) {
   return (
     <Link
       href={`/insights/${post.slug}`}
-      className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition-colors hover:border-[#2f3ee0]/60"
+      className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition-colors hover:border-[#3B3BD9]/60"
     >
       <div className="relative aspect-[16/9] w-full overflow-hidden bg-secondary">
         {post.cover ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            src={post.cover}
-            alt={post.coverAlt ?? ""}
-            className="absolute inset-0 size-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-          />
+          <>
+            {post.coverLight ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={post.coverLight}
+                alt={post.coverAlt ?? ""}
+                className="absolute inset-0 size-full object-cover transition-transform duration-500 group-hover:scale-[1.03] dark:hidden"
+              />
+            ) : null}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={post.cover}
+              alt={post.coverAlt ?? ""}
+              className={cn(
+                "absolute inset-0 size-full object-cover transition-transform duration-500 group-hover:scale-[1.03]",
+                post.coverLight && "hidden dark:block"
+              )}
+            />
+          </>
         ) : (
           // Neutral fallback so the grid stays even for text-only posts.
           <div className="absolute inset-0 flex items-center justify-center text-muted-foreground/40">
@@ -55,7 +68,7 @@ export function PostCard({ post }: { post: PostSummary }) {
       </div>
       <div className="flex flex-1 flex-col p-6">
         <Meta category={post.category} date={formatPostDate(post.date)} minutes={post.readingMinutes} />
-        <h3 className="mt-3 font-heading text-xl font-medium tracking-tight text-foreground">
+        <h3 className="mt-3 font-serif text-xl font-medium tracking-tight text-foreground">
           {post.title}
         </h3>
         <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-muted-foreground">

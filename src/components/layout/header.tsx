@@ -3,13 +3,17 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
-import { Button } from "@/components/ui/button";
 import { LumenLogo } from "@/components/layout/logo";
-import { ThemeToggle } from "@/components/layout/theme-toggle";
 import { cn } from "@/lib/utils";
 import { mainNav, primaryCta, signInCta } from "@/lib/site-config";
+
+function isActive(pathname: string, href: string): boolean {
+  // Hash links (same-page anchors) never take the active treatment.
+  if (href.startsWith("/#") || href === "/") return false;
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,25 +21,26 @@ export function Header() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-sm">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
+    <header className="sticky top-0 z-50 border-b border-[#ECECF1] bg-white/95 backdrop-blur-sm">
+      <div className="mx-auto flex max-w-[1200px] items-center justify-between gap-10 whitespace-nowrap px-6 py-4 md:px-12 md:py-[22px]">
         <Link
           href="/"
-          className="text-foreground"
+          className="shrink-0 text-[#0A0A0C]"
           aria-label="Lumen Growth home"
           onClick={() => setIsMenuOpen(false)}
         >
-          <LumenLogo />
+          <LumenLogo className="gap-[11px]" iconClassName="h-[22px]" />
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-[34px] md:flex" aria-label="Primary">
           {mainNav.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               className={cn(
-                "text-sm font-medium text-muted-foreground transition-colors hover:text-foreground",
-                pathname === item.href && "text-foreground"
+                "text-[15px] font-medium text-[#3A3A44] transition-colors hover:text-[#0A0A0C]",
+                isActive(pathname, item.href) &&
+                  "text-[#0A0A0C] underline decoration-[#3B3BD9] decoration-2 underline-offset-[6px]"
               )}
             >
               {item.label}
@@ -43,29 +48,34 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-4 md:flex">
-          <ThemeToggle />
-          <Button
-            size="sm"
-            variant="warm"
-            className="rounded-full px-5"
-            render={<Link href={primaryCta.href} />}
-          >
-            {primaryCta.label}
-          </Button>
+        <div className="hidden shrink-0 items-center gap-[22px] md:flex">
           <Link
             href={signInCta.href}
-            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+            className="text-[15px] font-medium text-[#3A3A44] transition-colors hover:text-[#0A0A0C]"
           >
             {signInCta.label}
           </Link>
+          <Link
+            href={primaryCta.href}
+            className="inline-flex items-center gap-[9px] rounded-[10px] bg-[#0A0A0C] px-6 py-3 text-[15px] font-medium text-white transition-colors hover:bg-[#25252C]"
+          >
+            {primaryCta.label}
+            <ArrowUpRight className="size-[13px]" />
+          </Link>
         </div>
 
-        <div className="flex items-center gap-1.5 md:hidden">
-          <ThemeToggle />
+        <div className="flex shrink-0 items-center gap-2 md:hidden">
+          <Link
+            href={primaryCta.href}
+            onClick={() => setIsMenuOpen(false)}
+            className="inline-flex items-center gap-1.5 rounded-[10px] bg-[#0A0A0C] px-4 py-2 text-sm font-medium text-white"
+          >
+            {primaryCta.label}
+            <ArrowUpRight className="size-3" />
+          </Link>
           <button
             type="button"
-            className="flex size-9 items-center justify-center rounded-md text-foreground"
+            className="flex size-9 items-center justify-center rounded-md text-[#0A0A0C]"
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={isMenuOpen}
             onClick={() => setIsMenuOpen((open) => !open)}
@@ -83,7 +93,7 @@ export function Header() {
             animate={{ height: "auto", opacity: 1 }}
             exit={shouldReduceMotion ? undefined : { height: 0, opacity: 0 }}
             transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-            className="overflow-hidden border-t border-border md:hidden"
+            className="overflow-hidden border-t border-[#ECECF1] md:hidden"
           >
             <div className="flex flex-col gap-1 px-6 py-4">
               {mainNav.map((item) => (
@@ -91,25 +101,15 @@ export function Header() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className="rounded-md px-2 py-2.5 text-sm font-medium text-foreground"
+                  className="rounded-md px-2 py-2.5 text-sm font-medium text-[#15151C]"
                 >
                   {item.label}
                 </Link>
               ))}
-              <Button
-                size="sm"
-                variant="warm"
-                className="mt-3"
-                render={
-                  <Link href={primaryCta.href} onClick={() => setIsMenuOpen(false)} />
-                }
-              >
-                {primaryCta.label}
-              </Button>
               <Link
                 href={signInCta.href}
                 onClick={() => setIsMenuOpen(false)}
-                className="mt-1 rounded-md px-2 py-2.5 text-sm font-medium text-muted-foreground"
+                className="mt-1 rounded-md px-2 py-2.5 text-sm font-medium text-[#3A3A44]"
               >
                 {signInCta.label}
               </Link>

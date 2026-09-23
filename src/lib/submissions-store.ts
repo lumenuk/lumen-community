@@ -7,7 +7,7 @@ const DATA_DIR = path.join(process.cwd(), "data", "submissions");
    hosts the filesystem is ephemeral, so email delivery (lib/notify.ts) is the
    primary channel there. The data/ directory is git-ignored. */
 export async function saveSubmission(
-  type: "membership" | "growth-audit" | "newsletter",
+  type: "membership" | "growth-audit" | "newsletter" | "book-call",
   payload: Record<string, unknown>
 ): Promise<void> {
   await mkdir(DATA_DIR, { recursive: true });

@@ -35,7 +35,7 @@ export function ShareRail({ url, title }: { url: string; title: string }) {
           target="_blank"
           rel="noopener noreferrer"
           aria-label={`${name} (opens in a new tab)`}
-          className="flex size-10 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:border-[#2f3ee0]/60 hover:text-accent-ink"
+          className="flex size-10 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:border-[#3B3BD9]/60 hover:text-accent-ink"
         >
           <Icon className="size-4" />
         </a>

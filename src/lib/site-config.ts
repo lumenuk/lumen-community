@@ -15,22 +15,28 @@ export const mainNav = [
   { label: "FAQ", href: "/faq" },
 ] as const;
 
+/* Footer link columns (design system, Sept 2026): Product / Company / Legal.
+   Some labels reuse existing routes since dedicated pages don't exist yet
+   (Scout → Solutions/services; About → services). */
 export const footerNav = {
-  explore: [
+  product: [
+    { label: "Scout", href: "/services" },
     { label: "Solutions", href: "/services" },
     { label: "Evidence", href: "/#evidence" },
+  ],
+  company: [
+    { label: "About", href: "/services" },
     { label: "Insights", href: "/insights" },
-    { label: "FAQ", href: "/faq" },
-    { label: "Book a call", href: "/contact" },
+    { label: "Contact", href: "/contact" },
   ],
   legal: [
     { label: "Privacy Policy", href: "/privacy-policy" },
-    { label: "Terms and Conditions", href: "/terms" },
+    { label: "Terms", href: "/terms" },
   ],
 };
 
 /* Primary conversion: a booked call. Secondary: exploring the Scout product.
-   Both are honest, low-pressure entry points into an early-stage agency. */
+   Both are honest, low-pressure entry points into the agency. */
 export const primaryCta = {
   label: "Book a call",
   href: "/contact",

@@ -58,15 +58,25 @@ function LeadFeature({ post }: { post: PostSummary }) {
       </div>
       {post.cover ? (
         <div className="relative mt-8 aspect-[16/9] w-full overflow-hidden rounded-xl border border-border bg-secondary">
+          {post.coverLight ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={post.coverLight}
+              alt={post.coverAlt ?? ""}
+              className="absolute inset-0 size-full object-cover transition-transform duration-500 group-hover:scale-[1.02] dark:hidden"
+            />
+          ) : null}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={post.cover}
             alt={post.coverAlt ?? ""}
-            className="absolute inset-0 size-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+            className={`absolute inset-0 size-full object-cover transition-transform duration-500 group-hover:scale-[1.02]${
+              post.coverLight ? " hidden dark:block" : ""
+            }`}
           />
         </div>
       ) : null}
-      <span className="mt-6 inline-flex items-center gap-1.5 rounded-full bg-warm px-5 py-2 text-sm font-medium text-warm-foreground transition-colors group-hover:bg-warm-deep group-hover:text-white">
+      <span className="mt-6 inline-flex items-center gap-1.5 rounded-[10px] bg-[#0A0A0C] px-5 py-2.5 text-sm font-medium text-white transition-colors group-hover:bg-[#25252C]">
         Continue reading
         <ArrowRight className="size-4" />
       </span>

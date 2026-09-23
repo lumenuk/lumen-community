@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Archivo, Poppins } from "next/font/google";
+import { Poppins, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Header } from "@/components/layout/header";
@@ -14,12 +14,15 @@ const poppins = Poppins({
   weight: ["300", "400", "500", "600", "700"],
   variable: "--font-sans",
 });
-const archivo = Archivo({ subsets: ["latin"], variable: "--font-heading" });
-
-/* Runs before paint so there's no flash of the wrong theme: honour the visitor's
-   saved choice, otherwise default to dark (the brand default). CSP already allows
-   'unsafe-inline' scripts, so no nonce is required. */
-const themeInit = `(function(){try{var s=localStorage.getItem("theme");var d=s?s==="dark":true;var e=document.documentElement;e.classList.toggle("dark",d);e.style.colorScheme=d?"dark":"light";}catch(e){}})();`;
+/* Editorial display serif for headlines across the marketing pages (design
+   system, Sept 2026). /insights overrides --font-serif with Newsreader within
+   its own layout. */
+const sourceSerif = Source_Serif_4({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-serif",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -46,12 +49,8 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      suppressHydrationWarning
-      className={cn("h-full antialiased", poppins.variable, archivo.variable)}
+      className={cn("h-full antialiased", poppins.variable, sourceSerif.variable)}
     >
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: themeInit }} />
-      </head>
       <body className="flex min-h-full flex-col bg-background font-sans text-foreground">
         <OrganizationJsonLd />
         <Header />

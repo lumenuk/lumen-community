@@ -24,8 +24,10 @@ export function Section({
   id,
 }: SectionProps) {
   return (
-    <section id={id} className={cn("py-20 md:py-28", toneClasses[tone], className)}>
-      <div className={cn("mx-auto max-w-6xl px-6", containerClassName)}>{children}</div>
+    <section id={id} className={cn("py-20 md:py-24", toneClasses[tone], className)}>
+      <div className={cn("mx-auto max-w-[1200px] px-6 md:px-12", containerClassName)}>
+        {children}
+      </div>
     </section>
   );
 }

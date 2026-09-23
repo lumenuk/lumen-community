@@ -8,7 +8,6 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-sans);
-  --font-heading: var(--font-heading);
   --font-serif: var(--font-serif);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -44,9 +43,11 @@
   --color-warm-foreground: var(--warm-foreground);
   --color-warm: var(--warm);
   --color-warm-deep: var(--warm-deep);
-  /* Theme-aware blue accent for kickers/links/markers: light-blue on dark
-     surfaces, deep-blue on white so it stays legible in both modes. */
+  /* Blue accent for kickers/links/markers. */
   --color-accent-ink: var(--accent-ink);
+  /* Purple accent — used sparingly for the counter-statistic and "AI agent
+     teams" / Report kickers (design system, Sept 2026). */
+  --color-accent-purple: var(--accent-purple);
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -56,152 +57,57 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-/* Lumen Growth AI-agency theme (owner redesign, Sept 2026): a single
-   electric-blue accent, offered in both a light and a dark mode. `:root` is the
-   LIGHT palette (white background, charcoal ink); `.dark` overrides it with the
-   dark palette. <html> carries the `dark` class when dark mode is active (set
-   before paint by the inline script in layout.tsx), so `dark:` variants and the
-   tokens below both resolve from the same source of truth. The site defaults to
-   dark unless the visitor has chosen light. */
+/* Lumen Growth design system (owner redesign, Sept 2026): a single white-ground
+   editorial design — no light/dark toggle. White is the dominant colour; the
+   only accents are blue (#3B3BD9) and purple (#6C3FD4), used sparingly as small
+   marks and blurred gradient blooms. Headlines are Source Serif 4; UI/body is
+   Poppins. Depth comes from the gradient blooms only — there are no shadows. */
 :root {
   --background: #ffffff;
-  --foreground: #15161c;
-  --card: #f7f7f5;
-  --card-foreground: #15161c;
+  --foreground: #15151c;
+  --card: #ffffff;
+  --card-foreground: #15151c;
   --popover: #ffffff;
-  --popover-foreground: #15161c;
-  --primary: #2f3ee0;
+  --popover-foreground: #15151c;
+  /* Primary = near-black (headlines, primary buttons, wordmark). */
+  --primary: #0a0a0c;
   --primary-foreground: #ffffff;
-  --secondary: #f2f2f0;
-  --secondary-foreground: #15161c;
-  --muted: #f2f2f0;
-  --muted-foreground: #5b5d67;
-  --accent: #2f3ee0;
+  --secondary: #f4f4f5;
+  --secondary-foreground: #15151c;
+  --muted: #f4f4f5;
+  --muted-foreground: #5b5b66;
+  --accent: #3b3bd9;
   --accent-foreground: #ffffff;
   --destructive: oklch(0.577 0.245 27.325);
-  --border: #e5e5e2;
-  --input: #e0e0dd;
-  --ring: #2f3ee0;
-  --chart-1: #2f3ee0;
-  --chart-2: #3e5cff;
-  --chart-3: #2f3ee0;
-  --chart-4: #6274ff;
-  --chart-5: #4a5cf0;
-  --radius: 0.5rem;
-  --sidebar: #f7f7f5;
-  --sidebar-foreground: #15161c;
-  --sidebar-primary: #2f3ee0;
+  --border: #e6e6ec;
+  --input: #e6e6ec;
+  --ring: #3b3bd9;
+  --chart-1: #3b3bd9;
+  --chart-2: #6c3fd4;
+  --chart-3: #3b3bd9;
+  --chart-4: #c7c9f7;
+  --chart-5: #6c3fd4;
+  --radius: 0.625rem;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #15151c;
+  --sidebar-primary: #0a0a0c;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #f2f2f0;
-  --sidebar-accent-foreground: #15161c;
-  --sidebar-border: #e5e5e2;
-  --sidebar-ring: #2f3ee0;
+  --sidebar-accent: #f4f4f5;
+  --sidebar-accent-foreground: #15151c;
+  --sidebar-border: #e6e6ec;
+  --sidebar-ring: #3b3bd9;
 
-  /* Brand section/accent tokens. `charcoal` is a permanently dark surface (the
-     footer and dark accent bands) — a dark footer on a light page is the intent,
-     so it stays near-black in both modes. `warm` is the periwinkle primary CTA
-     (dark text on it), the same in both modes; `accent-ink` is the legible blue
-     for kickers/links per mode. */
-  --charcoal: #131316;
-  --charcoal-foreground: #f4f4f2;
+  /* Accent tokens. `charcoal` is a near-black surface; `warm` is the legacy
+     periwinkle CTA (kept for any remaining uses). `accent-ink` = the blue accent,
+     `accent-purple` = the purple accent. */
+  --charcoal: #0a0a0c;
+  --charcoal-foreground: #ffffff;
   --warm: #c9d3ff;
-  --warm-foreground: #15161c;
-  --warm-deep: #2f3ee0;
-  --accent-ink: #2f3ee0;
-  --link-hover: #2333c9;
-
-  /* Homepage hero, light mode: white base with the soft blue wash (the preferred
-     style, shared with dark mode via --hero-glow). Crisp bottom edge so the next
-     black section reads as a distinct band. */
-  --hero-base: #ffffff;
-  --hero-glow: radial-gradient(116% 128% at 113% 50%, rgba(122,140,255,0.66) 0%, rgba(94,116,250,0.44) 20%, rgba(120,140,255,0.22) 40%, rgba(122,140,255,0.07) 56%, rgba(122,140,255,0) 70%);
-  --hero-fade-left: linear-gradient(90deg, #ffffff 0%, #ffffff 14%, rgba(255,255,255,0.5) 38%, rgba(255,255,255,0) 58%);
-  --hero-fade-top: linear-gradient(180deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 22%);
-  --hero-fade-bottom: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 100%);
-  --hero-dots: rgba(90,110,220,0.4);
-}
-
-.dark {
-  --background: #0a0a0b;
-  --foreground: #f4f4f2;
-  --card: #131316;
-  --card-foreground: #f4f4f2;
-  --popover: #131316;
-  --popover-foreground: #f4f4f2;
-  --primary: #2f3ee0;
-  --primary-foreground: #ffffff;
-  --secondary: #1a1a1e;
-  --secondary-foreground: #f4f4f2;
-  --muted: #131316;
-  --muted-foreground: #b4b4b0;
-  --accent: #2f3ee0;
-  --accent-foreground: #ffffff;
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: #232327;
-  --input: #26262a;
-  --ring: #3e5cff;
-  --chart-1: #2f3ee0;
-  --chart-2: #3e5cff;
-  --chart-3: #7f92ff;
-  --chart-4: #c9d3ff;
-  --chart-5: #9aa6ff;
-  --sidebar: #131316;
-  --sidebar-foreground: #f4f4f2;
-  --sidebar-primary: #2f3ee0;
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #1a1a1e;
-  --sidebar-accent-foreground: #f4f4f2;
-  --sidebar-border: #232327;
-  --sidebar-ring: #3e5cff;
-
-  --charcoal: #131316;
-  --charcoal-foreground: #f4f4f2;
-  --warm: #c9d3ff;
-  --warm-foreground: #0a0a0b;
-  --warm-deep: #2f3ee0;
-  --accent-ink: #7f92ff;
-  --link-hover: #c9d3ff;
-
-  /* Homepage hero, dark mode: near-black base with the SAME soft blue wash as
-     light mode (owner prefers that fade on both). */
-  --hero-base: #050506;
-  --hero-glow: radial-gradient(116% 128% at 113% 50%, rgba(122,140,255,0.66) 0%, rgba(94,116,250,0.44) 20%, rgba(120,140,255,0.22) 40%, rgba(122,140,255,0.07) 56%, rgba(122,140,255,0) 70%);
-  --hero-fade-left: linear-gradient(90deg, #050506 0%, #050506 14%, rgba(5,5,6,0.5) 38%, rgba(5,5,6,0) 58%);
-  --hero-fade-top: linear-gradient(180deg, rgba(5,5,6,0.5) 0%, rgba(5,5,6,0) 22%);
-  --hero-fade-bottom: linear-gradient(180deg, rgba(10,10,11,0) 0%, rgba(10,10,11,0.6) 55%, #0a0a0b 100%);
-  --hero-dots: rgba(200,214,255,0.5);
-}
-
-/* Inverse band: renders in the OPPOSITE tone to the current mode (dark on a light
-   page, light on a dark page), so homepage sections alternate in both themes.
-   Content inside uses the normal tokens, which resolve to these overrides. */
-.section-invert {
-  --background: #0a0a0b;
-  --foreground: #f4f4f2;
-  --card: #131316;
-  --card-foreground: #f4f4f2;
-  --muted: #131316;
-  --muted-foreground: #b4b4b0;
-  --secondary: #1a1a1e;
-  --secondary-foreground: #f4f4f2;
-  --border: #232327;
-  --accent-ink: #7f92ff;
-  --link-hover: #c9d3ff;
-  color-scheme: dark;
-}
-.dark .section-invert {
-  --background: #f2f2f0;
-  --foreground: #15161c;
-  --card: #ffffff;
-  --card-foreground: #15161c;
-  --muted: #f2f2f0;
-  --muted-foreground: #5b5d67;
-  --secondary: #e9e9e6;
-  --secondary-foreground: #15161c;
-  --border: #d8d8d4;
-  --accent-ink: #2f3ee0;
-  --link-hover: #2333c9;
-  color-scheme: light;
+  --warm-foreground: #0a0a0c;
+  --warm-deep: #3b3bd9;
+  --accent-ink: #3b3bd9;
+  --accent-purple: #6c3fd4;
+  --link-hover: #2d2db0;
 }
 
 @layer base {
@@ -218,13 +124,40 @@
   h2,
   h3,
   h4 {
-    @apply font-heading tracking-tight;
+    @apply font-serif tracking-tight;
   }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+/* Animated Lumen mark: the ring turns 60° (one half-segment), holds, turns back,
+   holds — a considered turn, not a spin. One cycle is 4.5s. */
+@keyframes lumen-turn {
+  0%,
+  14% {
+    transform: rotate(0deg);
+  }
+  34%,
+  66% {
+    transform: rotate(60deg);
+  }
+  86%,
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.lumen-ring {
+  transform-box: view-box;
+  transform-origin: 36px 36px;
+  animation: lumen-turn 4.5s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .lumen-ring {
+    animation: none;
   }
 }
 

@@ -141,7 +141,7 @@ function MembershipForm() {
 
       <ConsentField error={errors.consent} />
 
-      <Button type="submit" size="lg" variant="warm" disabled={isPending} className="w-full sm:w-auto">
+      <Button type="submit" size="lg" variant="default" disabled={isPending} className="w-full rounded-[10px] px-7 sm:w-auto">
         {isPending ? "Submitting..." : "Book a call"}
       </Button>
     </form>
@@ -226,7 +226,7 @@ function AuditForm() {
 
       <ConsentField error={errors.consent} />
 
-      <Button type="submit" size="lg" variant="warm" disabled={isPending} className="w-full sm:w-auto">
+      <Button type="submit" size="lg" variant="default" disabled={isPending} className="w-full rounded-[10px] px-7 sm:w-auto">
         {isPending ? "Submitting..." : "Request a free AI audit"}
       </Button>
     </form>

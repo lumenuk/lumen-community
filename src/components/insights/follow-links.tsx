@@ -18,9 +18,9 @@ export function FollowLinks() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`Follow Lumen Growth on ${social.name} (opens in a new tab)`}
-            className="group flex items-center gap-4 rounded-2xl border border-border bg-card p-5 transition-colors hover:border-[#2f3ee0]/60"
+            className="group flex items-center gap-4 rounded-2xl border border-border p-5 transition-colors hover:border-[#3B3BD9]/60"
           >
-            <span className="flex size-12 shrink-0 items-center justify-center rounded-full border border-border text-foreground transition-colors group-hover:border-[#2f3ee0]/60 group-hover:text-accent-ink">
+            <span className="flex size-12 shrink-0 items-center justify-center rounded-full border border-border text-foreground transition-colors group-hover:border-[#3B3BD9]/60 group-hover:text-accent-ink">
               <Icon className="size-5" />
             </span>
             <span className="min-w-0 flex-1">

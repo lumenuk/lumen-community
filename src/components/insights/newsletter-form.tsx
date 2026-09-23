@@ -19,7 +19,7 @@ export function NewsletterForm() {
     return (
       <div
         role="status"
-        className="flex items-start gap-3 rounded-xl border border-[#2f3ee0]/40 bg-[#2f3ee0]/10 p-5 text-left"
+        className="flex items-start gap-3 rounded-xl border border-[#3B3BD9]/40 bg-[#3B3BD9]/10 p-5 text-left"
       >
         <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-accent-ink" aria-hidden="true" />
         <p className="text-sm leading-relaxed text-foreground">{state.message}</p>
@@ -63,9 +63,9 @@ export function NewsletterForm() {
         <Button
           type="submit"
           size="lg"
-          variant="warm"
+          variant="default"
           disabled={isPending}
-          className="rounded-md px-5 sm:shrink-0"
+          className="rounded-[10px] px-5 sm:shrink-0"
         >
           {isPending ? "Subscribing…" : "Subscribe"}
           {!isPending ? <ArrowRight className="size-4" /> : null}

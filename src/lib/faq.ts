@@ -42,7 +42,7 @@ export const faqItems: FaqEntry[] = [
   {
     question: "How much does it cost?",
     answer:
-      "We scope each system against a call and shape the price around your business, so we don't publish figures. We scope on hours saved and enquiries handled, not revenue promises — because we're new and we'd rather be honest than sell you a number we can't stand behind.",
+      "We scope each system against a call and shape the price around your business, so we don't publish figures. We scope on hours saved and enquiries handled, not revenue promises — we'd rather be honest than sell you a number we can't stand behind.",
   },
   {
     question: "What happens to our business information?",

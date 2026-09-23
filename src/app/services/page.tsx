@@ -1,15 +1,15 @@
-import Link from "next/link";
 import type { Metadata } from "next";
-import { ArrowUpRight, Check } from "lucide-react";
+import { Check } from "lucide-react";
 import { Section } from "@/components/section/section";
+import { PageIntro } from "@/components/section/page-intro";
 import { Reveal } from "@/components/motion/reveal";
-import { Button } from "@/components/ui/button";
+import { Eyebrow, CtaPrimary, CtaOutline } from "@/components/ui/cta";
 import { primaryCta } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "Solutions",
   description:
-    "The AI systems Lumen Growth builds and steers: Scout agent teams, Archer lead recovery, and Voice answering and callbacks. Scoped against a call and your existing data.",
+    "The AI systems Lumen Growth builds and steers: Scout agent teams, Archer lead generation, and Voice answering and callbacks. Scoped against a call and your existing data.",
   alternates: { canonical: "/services" },
 };
 
@@ -17,13 +17,16 @@ type SolutionCta = "contact" | "soon";
 
 const solutions: {
   kicker: string;
+  kickerColor: string;
   name: string;
   summary: string;
   points: string[];
   cta: SolutionCta;
+  note?: string;
 }[] = [
   {
-    kicker: "AI AGENT TEAMS",
+    kicker: "AI agent teams",
+    kickerColor: "#3B3BD9",
     name: "Scout",
     summary:
       "A team of AI agents that research, verify, negotiate and report back — handing work to each other instead of stalling on one assistant.",
@@ -35,19 +38,22 @@ const solutions: {
     cta: "contact",
   },
   {
-    kicker: "LEAD RECOVERY",
+    kicker: "Lead generation",
+    kickerColor: "#6C3FD4",
     name: "Archer",
     summary:
-      "The dormant leads you already paid for, worked across email, WhatsApp and voice until they qualify or die.",
+      "Live leads for your business, found and qualified using our own AI systems, delivered straight to you every month.",
     points: [
-      "Re-engages old enquiries in your existing CRM — no migration",
-      "Qualifies and books, drafts replies for anything off-script",
-      "Reports back on what moved and what didn't",
+      "A steady flow of new, qualified leads — not a static list",
+      "Qualified before they reach you, so your time goes on real conversations",
+      "Reports back on what's working and what isn't",
     ],
     cta: "contact",
+    note: "Want this, or something similar for your business? Contact us and we'll talk it through.",
   },
   {
-    kicker: "VOICE AGENTS",
+    kicker: "Voice agents",
+    kickerColor: "#15151C",
     name: "Answering & callbacks",
     summary:
       "Out-of-hours pick-up, overflow cover, and calls back to anyone who abandoned a form.",
@@ -63,43 +69,56 @@ const solutions: {
 export default function SolutionsPage() {
   return (
     <>
-      <Section tone="charcoal">
-        <div className="grid gap-x-12 gap-y-12 lg:grid-cols-3">
+      <Section tone="light">
+        <PageIntro
+          eyebrow="Solutions"
+          title="Systems we build and steer"
+          description="Every business loses the same hours each week — cold enquiries, calls that ring out, admin that stacks up. We build AI systems that take that work off your plate. Three we build most often:"
+        />
+
+        <div className="mt-16 grid gap-x-12 gap-y-14 lg:grid-cols-3">
           {solutions.map((solution, index) => (
             <Reveal key={solution.name} delay={(index % 3) * 0.06}>
-              <div className="flex h-full flex-col border-t border-white/15 pt-5">
-                <p className="text-[11px] font-medium tracking-[0.14em] text-accent-ink">
+              <div className="flex h-full flex-col border-t border-[#E6E6EC] pt-6">
+                <Eyebrow color={solution.kickerColor} bar={false}>
                   {solution.kicker}
-                </p>
-                <h2 className="mt-3 text-2xl font-semibold">{solution.name}</h2>
-                <p className="mt-3 text-base leading-relaxed text-charcoal-foreground/75">
+                </Eyebrow>
+                <h2 className="mt-4 font-serif text-[26px] leading-[1.25] font-normal text-[#0A0A0C]">
+                  {solution.name}
+                </h2>
+                <p className="mt-3 text-[16px] leading-relaxed text-[#4A4A55]">
                   {solution.summary}
                 </p>
                 <ul className="mt-6 space-y-3">
                   {solution.points.map((point) => (
                     <li
                       key={point}
-                      className="flex gap-3 text-sm leading-relaxed text-charcoal-foreground/85"
+                      className="flex gap-3 text-[15px] leading-relaxed text-[#15151C]"
                     >
-                      <Check className="mt-0.5 size-4 shrink-0 text-accent-ink" aria-hidden="true" />
+                      <Check
+                        className="mt-0.5 size-4 shrink-0 text-[#3B3BD9]"
+                        aria-hidden="true"
+                      />
                       {point}
                     </li>
                   ))}
                 </ul>
+                {solution.note ? (
+                  <p className="mt-5 text-[14px] leading-relaxed text-[#8A8A94]">
+                    {solution.note}
+                  </p>
+                ) : null}
                 <div className="mt-auto pt-7">
                   {solution.cta === "contact" ? (
-                    <Button
-                      size="sm"
-                      variant="outline"
-                      className="rounded-full border-white/25 bg-transparent px-4 text-[#f4f4f2] hover:bg-white/10 dark:border-white/25 dark:bg-transparent dark:hover:bg-white/10"
-                      render={<Link href="/contact" />}
-                    >
+                    <CtaOutline href="/contact" withArrow>
                       Contact us
-                      <ArrowUpRight className="size-3.5" />
-                    </Button>
+                    </CtaOutline>
                   ) : (
-                    <span className="inline-flex items-center gap-2 rounded-full border border-white/12 px-4 py-2 text-xs font-medium tracking-wide text-white/45">
-                      <span className="size-1.5 rounded-full bg-accent-ink/70" aria-hidden="true" />
+                    <span className="inline-flex items-center gap-2 rounded-[10px] border border-[#E6E6EC] px-4 py-2 text-[13px] font-medium tracking-wide text-[#8A8A94]">
+                      <span
+                        className="size-1.5 rounded-full bg-[#6C3FD4]"
+                        aria-hidden="true"
+                      />
                       Coming soon
                     </span>
                   )}
@@ -108,30 +127,27 @@ export default function SolutionsPage() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal>
+          <p className="mt-14 max-w-2xl text-[17px] leading-relaxed text-[#4A4A55]">
+            We build specific solutions, not just the ones we advertise. If your
+            business needs something that isn&apos;t listed here, we build that too.
+          </p>
+        </Reveal>
       </Section>
 
-      <Section tone="light" containerClassName="text-center">
-        <Reveal>
-          <h2 className="text-2xl font-semibold sm:text-3xl">
+      <Section tone="light" className="pt-0" containerClassName="text-center">
+        <Reveal className="mx-auto flex max-w-2xl flex-col items-center gap-5">
+          <h2 className="font-serif text-[32px] leading-[1.1] font-normal tracking-[-0.015em] text-[#0A0A0C] sm:text-[40px]">
             Not sure which one fits?
           </h2>
-          <p className="mx-auto mt-3 max-w-xl text-base leading-relaxed text-muted-foreground">
-            Tell us the task that keeps stalling. We&apos;ll tell you honestly whether an
-            agent team can do it, and where a human still has to.
+          <p className="max-w-xl text-[19px] leading-[1.6] text-[#4A4A55]">
+            Tell us the task that keeps stalling. We&apos;ll tell you honestly whether
+            an agent team can do it, and where a human still has to.
           </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <Button
-              size="lg"
-              variant="warm"
-              className="rounded-full px-5"
-              render={<Link href={primaryCta.href} />}
-            >
-              {primaryCta.label}
-              <ArrowUpRight className="size-4" />
-            </Button>
-            <Button size="lg" variant="outline" render={<Link href="/faq" />}>
-              Read the FAQ
-            </Button>
+          <div className="mt-1 flex flex-wrap justify-center gap-3.5">
+            <CtaPrimary href={primaryCta.href}>{primaryCta.label}</CtaPrimary>
+            <CtaOutline href="/faq">Read the FAQ</CtaOutline>
           </div>
         </Reveal>
       </Section>

@@ -3,6 +3,7 @@
 import type { ZodType } from "zod";
 import {
   auditSchema,
+  bookCallSchema,
   membershipSchema,
   type ContactFormState,
 } from "@/lib/validation/contact";
@@ -114,6 +115,80 @@ export async function submitMembershipApplication(
     successMessage:
       "Thanks, your request has been received. We'll be in touch to book a call soon.",
   });
+}
+
+export async function submitBookCall(
+  _prevState: ContactFormState,
+  formData: FormData
+): Promise<ContactFormState> {
+  const identifier = await requestIdentifier();
+  if (isRateLimited(identifier)) {
+    return {
+      status: "error",
+      message: "Too many submissions from this connection. Please try again shortly.",
+    };
+  }
+
+  const parsed = bookCallSchema.safeParse({
+    businessName: formData.get("businessName"),
+    firstName: formData.get("firstName"),
+    lastName: formData.get("lastName"),
+    websiteOrLinkedin: formData.get("websiteOrLinkedin"),
+    phone: formData.get("phone"),
+    message: formData.get("message"),
+    consent: formData.get("consent") ?? "",
+    company: formData.get("company") ?? "",
+  });
+
+  const successMessage =
+    "Thanks — your details are in. We'll call you to book a time. Talk soon.";
+
+  if (!parsed.success) {
+    return {
+      status: "error",
+      message: "Please check the highlighted fields and try again.",
+      fieldErrors: collectFieldErrors(parsed.error.issues),
+    };
+  }
+
+  /* Honeypot tripped: pretend success, store nothing. */
+  if (parsed.data.company) {
+    return { status: "success", message: successMessage };
+  }
+
+  const { company, ...data } = parsed.data;
+  void company;
+
+  const emailSent = await sendNotificationEmail({
+    subject: `Call request: ${data.businessName}`,
+    lines: [
+      `Name: ${data.firstName} ${data.lastName}`,
+      `Business: ${data.businessName}`,
+      `Website / LinkedIn: ${data.websiteOrLinkedin}`,
+      `Phone: ${data.phone}`,
+      "",
+      "How we can help:",
+      data.message,
+    ],
+  });
+
+  let fileSaved = false;
+  try {
+    await saveSubmission("book-call", data);
+    fileSaved = true;
+  } catch {
+    console.error("Submission file storage failed");
+  }
+
+  if (!emailSent && !fileSaved) {
+    return {
+      status: "error",
+      message:
+        "Something went wrong on our side and your request wasn't recorded. Please email us directly instead. The address is in the footer.",
+    };
+  }
+
+  return { status: "success", message: successMessage };
 }
 
 export async function submitGrowthAuditRequest(

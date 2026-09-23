@@ -137,11 +137,21 @@ export default async function InsightsPostPage({ params }: PageProps) {
                 <Reveal>
                   <figure className="mt-10">
                     <div className="relative aspect-[16/9] w-full overflow-hidden rounded-xl border border-border bg-secondary">
+                      {metadata.coverLight ? (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img
+                          src={metadata.coverLight}
+                          alt={metadata.coverAlt ?? ""}
+                          className="absolute inset-0 size-full object-cover dark:hidden"
+                        />
+                      ) : null}
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={metadata.cover}
                         alt={metadata.coverAlt ?? ""}
-                        className="absolute inset-0 size-full object-cover"
+                        className={`absolute inset-0 size-full object-cover${
+                          metadata.coverLight ? " hidden dark:block" : ""
+                        }`}
                       />
                     </div>
                     {metadata.coverCaption ? (
@@ -161,8 +171,8 @@ export default async function InsightsPostPage({ params }: PageProps) {
               {/* Newsletter + follow */}
               <div className="mt-16 border-t border-border pt-12">
                 <Reveal>
-                  <div className="rounded-2xl border border-border bg-card p-8 sm:p-10">
-                    <h2 className="font-heading text-xl font-medium tracking-tight sm:text-2xl">
+                  <div>
+                    <h2 className="font-serif text-xl font-medium tracking-tight sm:text-2xl">
                       Get the next one by email.
                     </h2>
                     <p className="mt-3 text-sm leading-relaxed text-muted-foreground">

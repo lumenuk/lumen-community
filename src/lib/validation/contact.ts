@@ -84,6 +84,62 @@ export const newsletterSchema = z.object({
   company: honeypot,
 });
 
+/* Book-a-call wizard. Stricter than the legacy forms to keep spam/low-intent
+   submissions out: real name parts, a real link, a real phone, a real message. */
+const nameField = (label: string) =>
+  z
+    .string()
+    .trim()
+    .min(2, `Enter your ${label} (at least 2 letters).`)
+    .max(60)
+    .regex(
+      /^\p{L}[\p{L}\s'’.-]*$/u,
+      `Enter a valid ${label} — letters only.`
+    );
+
+const linkField = z
+  .string()
+  .trim()
+  .min(1, "Enter your website or LinkedIn.")
+  .max(200)
+  .refine(
+    (value) => /^(https?:\/\/)?([\w-]+\.)+[a-z]{2,}(\/[^\s]*)?$/i.test(value),
+    "Enter a real website or LinkedIn URL (e.g. yourbusiness.co.uk)."
+  );
+
+const phoneRequired = z
+  .string()
+  .trim()
+  .min(1, "Enter your phone number.")
+  .refine((value) => /^[+()\d][+()\-\s\d]*$/.test(value), "Enter a valid phone number.")
+  .refine((value) => {
+    const digits = value.replace(/\D/g, "");
+    return digits.length >= 7 && digits.length <= 15;
+  }, "Enter a real phone number, including the area or country code.");
+
+const wordCount = (value: string) => value.trim().split(/\s+/).filter(Boolean).length;
+
+const helpMessage = z
+  .string()
+  .trim()
+  .min(1, "Tell us what you'd like help with.")
+  .max(2000)
+  .refine((value) => wordCount(value) >= 20, "Please write at least 20 words so we can prepare.")
+  .refine((value) => wordCount(value) <= 200, "Please keep it under 200 words.");
+
+export const bookCallSchema = z.object({
+  businessName,
+  firstName: nameField("first name"),
+  lastName: nameField("last name"),
+  websiteOrLinkedin: linkField,
+  phone: phoneRequired,
+  message: helpMessage,
+  consent,
+  company: honeypot,
+});
+
+export type BookCallInput = z.infer<typeof bookCallSchema>;
+
 export type MembershipInput = z.infer<typeof membershipSchema>;
 export type AuditInput = z.infer<typeof auditSchema>;
 

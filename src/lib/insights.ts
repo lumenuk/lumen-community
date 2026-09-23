@@ -46,6 +46,10 @@ export type PostFrontmatter = {
   /* Optional hero image, shown full-width under the standfirst and as the card
      thumbnail on the index. Path under /public, e.g. "/images/insights/x.jpg". */
   cover?: string;
+  /* Optional light-mode variant of the cover. When set, it's shown in light mode
+     and `cover` is treated as the dark-mode variant (swapped via the `dark` class).
+     Used for charts/diagrams that need to invert with the theme. */
+  coverLight?: string;
   coverAlt?: string;
   coverCaption?: string;
 };
