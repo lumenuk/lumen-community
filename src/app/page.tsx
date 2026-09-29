@@ -197,13 +197,14 @@ export default async function HomePage() {
       {/* 5 — Lead generation */}
       <section className="grid items-center gap-12 px-6 py-20 md:px-12 md:py-24 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
         <Reveal className="order-last lg:order-first">
-          <div className="relative aspect-[1495/763] w-full overflow-hidden rounded-2xl border border-[#E6E6EC]">
+          <div className="relative aspect-[1734/907] w-full overflow-hidden rounded-2xl border border-[#E6E6EC]">
             <Image
               src="/images/lead-gen/dashboard.png"
               alt="Lumen Growth lead generation dashboard showing live leads"
               fill
               sizes="(min-width: 1024px) 55vw, 100vw"
-              className="object-cover"
+              className="object-contain"
+              unoptimized
             />
           </div>
         </Reveal>
